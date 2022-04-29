@@ -24,6 +24,5 @@ hs_err_pid*
 
 #intellij Idea files
 *.iml
-out
-.idea
-EscapePriZon.iml
+out/
+.idea/
