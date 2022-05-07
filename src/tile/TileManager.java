@@ -7,6 +7,16 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
+/**
+ * Passato il path dei tile (immagine in png) e il paht della mappa (file txt),
+ * genera due matrici: la prima contenente i tile, mentre la seconda la disposizione dei tile
+ * I tile, giustamente disposti, vengono poi stampati su un {@link main.GamePanel}
+ *
+ * @author Sottocasa Michele
+ * @version 1.0
+ * @since 05/07/2022 USA data format
+ *
+ */
 public class TileManager {
 
     GamePanel gp;
