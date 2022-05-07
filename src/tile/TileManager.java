@@ -19,10 +19,8 @@ public class TileManager {
         int tileQuantity = 120;
         tile = new Tile[tileQuantity];
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
-        //loadTiles("src/main/res/maps/EscapePrizonTiles.png");
-        loadTiles("jetbrains://idea/navigate/reference?project=EscapePriZon&path=map/EscapePrizonTiles.png");
-        //loadMap("src/main/res/maps/map01.txt");
-        loadMap("jetbrains://idea/navigate/reference?project=EscapePriZon&path=map/map01.txt");
+        loadTiles("resources/map/EscapePrizonTiles.png");
+        loadMap("resources/map/map01.txt");
 
     }
     public void loadTiles(String path) {
