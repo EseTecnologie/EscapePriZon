@@ -5,28 +5,75 @@ import tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
-
+//TODO continuare documentazione
 /**
+ * Estensione della classe {@link JPanel}
+ * Creazione e gestione della finestra di gioco
  *
+ * @author Sottocasa Michele
+ * @version 1.0
+ * @since 05/07/2022 USA data format
  */
 public class GamePanel extends JPanel implements Runnable {
 
-    final int originalTitleSize = 16; //16x16 pixel images
-    final int scale = 3; //moltiplicatore per visualizzare gli elementi più in grande
-
+    /**
+     * Dimensione in pixel dei tile
+     * @since 1.0
+     */
+    public final int originalTitleSize = 16; //16x16 pixel images
+    /**
+     * Moltiplicatore di dimensione del tile
+     * @since 1.0
+     */
+    final int scale = 3;
+    /**
+     * Dimensione finale in pixel del tile dopo la scalatura
+     * @since 1.0
+     */
     public final int tileSize = originalTitleSize*scale;//48*48 (più visibile in schermi con alta risoluzione)
-    public final int maxScreenCol = 20; //dimensione delle colonne visibili nello schermo
-    public final int maxScreenRow = 16; //dimensione delle righe visibili nello schermo
+    /**
+     * Dimensione delle colonne visibili nello schermo
+     * @since 1.0
+     */
+    public final int maxScreenCol = 20;
+    /**
+     * Dimensione delle righe visibili nello schermo
+     * @since 1.0
+     */
+    public final int maxScreenRow = 16;
 
-    //dimensioni dello schermo (Width * Height)
+    /**
+     * Larghezza in pixle della finestra, calcolata sulla dimensione dei tile
+     * @since 1.0
+     */
     public final int screenWidth = tileSize *maxScreenCol;
+    /**
+     * Altezza in pixle delal finestra, calcolata sulal dimensione dei tile
+     * @since 1.0
+     */
     public final int screenHeight = tileSize *maxScreenRow;
 
     //World settings
-    public final int maxWorldCol = 92; //colonne totali del mondo
-    public final int maxWorldRow = 93; //righe totali del mondo
-    public final int worldWith = tileSize*maxWorldCol; //larghezza del mondo in pixel
-    public final int worldHeight = tileSize*maxWorldRow; //altezza del mondo in pikel
+    /**
+     * Totale colonne del mondo
+     * @since 1.0
+     */
+    public final int maxWorldCol = 92;
+    /**
+     * Totale righe del mondo
+     * @since 1.0
+     */
+    public final int maxWorldRow = 93;
+    /**
+     * Larghezza in pixel del mondo
+     * @since 1.0
+     */
+    public final int worldWith = tileSize*maxWorldCol;
+    /**
+     * Altezza in pixel del modno
+     * @since 1.0
+     */
+    public final int worldHeight = tileSize*maxWorldRow;
 
 
     final int FPS = 60;

@@ -9,6 +9,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Colombo Federico
+ * @since 1.0
+ */
+
 public class Player extends Entity {
 
     GamePanel gp;

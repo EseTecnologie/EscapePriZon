@@ -3,6 +3,11 @@ package entity;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * @author Colombo Federico
+ * @since 1.0
+ */
+
 public class Entity {
     public int worldX, worldY;
     public int speed;

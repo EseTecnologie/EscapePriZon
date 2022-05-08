@@ -8,20 +8,40 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 
 /**
- * Passato il path dei tile (immagine in png) e il paht della mappa (file txt),
- * genera due matrici: la prima contenente i tile, mentre la seconda la disposizione dei tile
- * I tile, giustamente disposti, vengono poi stampati su un {@link main.GamePanel}
+ * Passato il path dei tile (immagine) e il paht della mappa (file txt),
+ * generati: un array contenente i tile (l'indice corrisponde all'ID del tile) e una matrice la disposizione dei tile
+ * I tile, giustamente disposti, vengono poi disegnati su un {@link GamePanel}
  *
  * @author Sottocasa Michele
  * @version 1.0
- * @since 05/07/2022 USA data format
+ * @since 05/02/2022 USA data format
  *
  */
 public class TileManager {
 
-    GamePanel gp;
+    /**
+     * Variabile locale del {@link GamePanel} sul quale verranno disegnati i tile
+     * Assegnazione nel costruttore
+     * @since 1.0
+     */
+    private GamePanel gp;
+    /**
+     * Array contenente i tile successivamente importati con il metodo loadTiles()
+     * Assegnazione nel costruttore
+     * @since 1.0
+     */
     public Tile[] tile;
+    /**
+     * Matrice contenente la mappa successivamente importata nel metodo loadMap()
+     * Assegnazione nel costruttore
+     * @since 1.0
+     */
     public int mapTileNum[][];
+    /**
+     * {@link BufferedImage} nel quale verrrà salvata l'immagine contenente tutti i tile
+     * Assegnazione nel costruttore
+     * @since 1.0
+     */
     public BufferedImage img;
 
     public TileManager(GamePanel gp) {
@@ -33,6 +53,20 @@ public class TileManager {
         loadMap("resources/map/map01.txt");
 
     }
+
+    /**
+     * Metodo per creare e salvare in un apposito array tutti i tile necessari per la generazione della mappa.
+     * L'immagine viene suddivisa in quadrati di 16px (dimensione di un singolo tile), che vengono poi
+     * salvati come {@link BufferedImage} nell'array tile. L'indice dell'array corrisponde all'ID del
+     * singolo tile.
+     *
+     * @roules L'immagine passata deve contenere i tile su un'unica riga
+     *
+     *
+     * @param path percorso dell'imagine contenente i tile per la generazione della mappa
+     *
+     * @since 1.0
+     */
     public void loadTiles(String path) {
         try{
             img=ImageIO.read(new File(path));
@@ -42,14 +76,23 @@ public class TileManager {
         for (int i = 0; i < tile.length; i++) {
             tile[i]=new Tile();
 
-            tile[i].image = img.getSubimage(i * 16, 0, 16, 16);
+            tile[i].image = img.getSubimage(i * gp.originalTitleSize, 0, gp.originalTitleSize, gp.originalTitleSize);
 
         }
     }
 
     /**
+     * Metodo per importare da un file txt la disposizione dei tile nello schermo, in altre parole, il file con il
+     * layout della mappa. Il file viene poi letto, interrompendo la lettura ad ogni spazio incontrato, salvando la
+     * lettura corrente in una cella matrice. Al termine di ogni riga, si procede all'inserimento dei dati nella
+     * riga successiva della matrice
      *
-     * @param path, path del file della mappa
+     * @roules Il file deve contenere gli ID dei tile devono essere numerici e devono essere separati
+     * solamente da unospazio
+     *
+     * @param path, percorso del file txt contentente la disposizione dei tile
+     *
+     * @since 1.0
      */
     public void loadMap(String path) {
         try {
@@ -82,8 +125,16 @@ public class TileManager {
     }
 
     /**
+     * Metodo per disegnare la mappa sul un pannello {@link Graphics2D}
      *
-     * @param g
+     * Si procede a disegnare riga per riga la mappa, partendo dall'angolo in alto a sinistra, fino al raggiungimento
+     * dell'angolo opposto.
+     *
+     * Viene disegnato un tile per volta
+     *
+     * @param g pannello {@link Graphics2D}
+     *
+     * @since 1.0
      */
     public void draw(Graphics2D g) {
         int worldCol = 0;
