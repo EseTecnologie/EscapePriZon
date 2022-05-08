@@ -3,6 +3,12 @@ package main;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Punto di ingresso del programma
+ * @author Colobo Federico, Sottocasa Michele
+ * @since 04/28/2022
+ * @version 1.0
+ */
 public class Main {
     /**
      *

@@ -12,7 +12,7 @@ import java.awt.*;
  *
  * @author Sottocasa Michele
  * @version 1.0
- * @since 05/07/2022 USA data format
+ * @since 05/02/2022 USA data format
  */
 public class GamePanel extends JPanel implements Runnable {
 
