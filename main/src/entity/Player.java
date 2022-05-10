@@ -1,3 +1,11 @@
+/**
+ * @author  federico colombo
+ * @version 1.0
+ * @file Player.java
+ *
+ * @brief gestione della classe player con estensione all Entity
+ *
+ */
 package entity;
 
 import main.GamePanel;
@@ -10,13 +18,23 @@ import java.io.File;
 import java.io.IOException;
 
 public class Player extends Entity {
-
+    /** GamePanel per aggiornare le informazioni del player */
     GamePanel gp;
+    /** KeyHandler per effettuare i movimenti del player */
     KeyHandler keyH;
-
+    /** attributo per dichiarare la posizione sulla corditata X */
     public final int screenX;
+    /** attributo per dichiarare la posizione sulla corditata Y */
     public final int screenY;
+    /**
+     @brief costruttore del player
 
+     metodo che inizializza la posizione dello screen e il retangolo nel quale sara presente il player
+     richiama i metodi setDefaultValues per assegnare la posizione del player nel world e il getPlayerImage per
+     assegnare le immagini al player
+     @param  gp GamePanel sul quale viene caricato il player
+     @param  keyH KeyHandler per utilizzare il keylistener
+     */
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
@@ -29,13 +47,29 @@ public class Player extends Entity {
         setDefaultValues();
         getPlayerImage();
     }
+    /**
+     @brief metodo setDefaultValues
 
+     metodo per inizializzare i valori di default del player
+     le cordinate X e Y
+     la velocità
+     la direzione di partenza
+
+     */
     public void setDefaultValues() {
         worldX = gp.tileSize * 68;
-        worldY = gp.tileSize * 33;
+        worldY = gp.tileSize * 31;
         speed = 5;
         direction = "down";
     }
+    /**
+     @brief getPlayerImage
+
+     metodo per assegnare le immagini per i movimenti al player passandogli il path della loro posizione
+
+     @throws IOException avviene se le immagini non vengono trovate e questo non fa crasciare il software
+
+     */
 
     public void getPlayerImage() {
         try {
@@ -51,6 +85,14 @@ public class Player extends Entity {
             e.printStackTrace();
         }
     }
+    /**
+     @brief medoto update()
+
+     metodo che controlla se vengono premuti i tasti sulla tastiera se i tasti sono
+     stati premuti richiama il metodo simulateWalking() per aggiornare la posizione del
+     player
+     */
+
 
     public void update() {
         if (keyH.upPressed) {
@@ -67,11 +109,17 @@ public class Player extends Entity {
             simulateWalking();
         }
     }
+    /**
+     @brief medoto draw()
+
+    metodo per lo scambio delle immagini del player a seconda
+     della della direzione in cui deve andare e disegna l'immagine del player sul
+     gamePanel
+
+     @param g parametro contenente il pannello grafico sul quale verrà dedisegnato il player
+     */
 
     public void draw(Graphics2D g) {
-        //g.setColor(Color.WHITE);
-        //g.fillRect(x,y,gp.titleSize, gp.titleSize);
-
         BufferedImage image = null;
 
         switch (direction) {
@@ -103,6 +151,12 @@ public class Player extends Entity {
         g.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
     }
 
+    /**
+     @brief medoto simulateWalking()
+
+     metodo che chiama il metodo checkTile per controllare la collisione con le tile
+     e somma la velocità alla cordinate X e Y per permettere il movimento del player
+     */
     private void simulateWalking() {
         spriteCounter++;
         if (spriteCounter > 10) {
@@ -115,7 +169,7 @@ public class Player extends Entity {
 
         //tile collision
         collisionOn = false;
-        // TODO gp.collisionChecker.checkTile(this);
+        gp.collisionChecker.checkTile(this);
 
         if (!collisionOn)
             switch (direction) {
