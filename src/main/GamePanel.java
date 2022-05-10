@@ -5,14 +5,13 @@ import tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
-//TODO continuare documentazione
 /**
  * Estensione della classe {@link JPanel}
  * Creazione e gestione della finestra di gioco
  *
  * @author Sottocasa Michele
  * @version 1.0
- * @since 05/02/2022 USA data format
+ * @since 02/05/2022
  */
 public class GamePanel extends JPanel implements Runnable {
 
@@ -20,7 +19,7 @@ public class GamePanel extends JPanel implements Runnable {
      * Dimensione in pixel dei tile
      * @since 1.0
      */
-    public final int originalTitleSize = 16; //16x16 pixel images
+    public final int originalTitleSize = 16;
     /**
      * Moltiplicatore di dimensione del tile
      * @since 1.0
@@ -77,10 +76,27 @@ public class GamePanel extends JPanel implements Runnable {
 
 
     final int FPS = 60;
+    /**
+     * Istanza della classe {@link TileManager} per la gestione dei tile e la relativa visualizzazione
+     */
     TileManager tileM = new TileManager(this);
+    /**
+     * Istanza della classe {@link KeyHandler} per la gestione dell'input del giocatore
+     */
     KeyHandler keyH = new KeyHandler();
+    /**
+     * Thread per la gestione della finestra di gioco
+     */
     Thread gameThread;
+
+    /**
+     * Istanza della classe {@link CollisionChecker} per la gestione delle collisioni con gli elementi
+     */
     //public CollisionChecker collisionChecker = new CollisionChecker(this);
+    /**
+     * Istanza della classe {@link Player} per la gestione del player, viene passata come parametro
+     * l'istanza della classe {@link KeyHandler}
+     */
     public Player player = new Player(this, keyH);
 
     public GamePanel(){
@@ -92,7 +108,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     /**
-     *
+     * Metodo per lassegnazione del thread e avvio di quest'ultimo
      */
     public void startGameThread(){
         gameThread = new Thread(this);
@@ -100,7 +116,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     /**
-     *
+     * Override del metodo run del thread gameThread
+     * Gestione della frequenza di aggiornamento delle immagini nella finestra,
      */
     @Override
     public void run() {
@@ -127,7 +144,7 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
             if(timer >= 1000000000){
-                System.out.println("FPS: " + drawCount);
+                //System.out.println("FPS: " + drawCount);
                 drawCount = 0;
                 timer = 0;
             }
@@ -135,12 +152,15 @@ public class GamePanel extends JPanel implements Runnable {
         }
     }
 
+    /**
+     * Aggiornamento della posizione del player nella schermata
+     */
     public void update(){
         player.update();
     }
 
     /**
-     *
+     * Metodo per disegnare sul pannello della classe {@link Graphics} tutti i componenti di gioco 
      * @param g the <code>Graphics</code> object to protect
      */
     public void paintComponent(Graphics g){
