@@ -4,9 +4,9 @@ The player will play the role of a prisoner trying to escape from the prison by 
 
 ## Jobs
 
-Colombo: Controlli player(movimenti, collisioni con oggetti/muri), inventario player, telecamere (visuale telecamere e rilevamento player)
+Colombo: Controlli player(movimenti, collisioni con oggetti/muri), gestione apertura porte e tessere, telecamere (visuale telecamere e rilevamento player)
 
-Sottocasa: Creazione mappe, gestione npc Guardie (atteramento, inventario, "ritorno in vita"), gestione apertura porte e tessere, npc detenuti
+Sottocasa: Creazione mappe, gestione npc Guardie (atteramento, inventario, "ritorno in vita"),inventario player, npc detenuti
 
 ## Resources
 
