@@ -14,7 +14,7 @@ import java.io.*;
  *
  * @author Sottocasa Michele
  * @version 1.0
- * @since 05/02/2022 USA data format
+ * @since 02/05/2022
  *
  */
 public class TileManager {
