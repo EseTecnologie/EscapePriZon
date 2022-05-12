@@ -123,18 +123,23 @@ public class Player extends Entity {
                 case "redKey":
                     redKey=true;
                     gp.obj[index]=null;
+                    gp.ui.showMessage("Red Key!", new Font("Arial",Font.BOLD,30),Color.red);
                     break;
                 case "GreenKey":
                     greenKey=true;
                     gp.obj[index]=null;
+                    gp.ui.showMessage("Green Key!", new Font("Arial",Font.BOLD,30),Color.green);
                     break;
                 case "PurpleKey":
                     purpleKey=true;
                     gp.obj[index]=null;
+                    gp.ui.showMessage("Purple Key!", new Font("Arial",Font.BOLD,30),Color.MAGENTA);
+
                     break;
                 case "WhiteKey":
                     whiteKey=true;
                     gp.obj[index]=null;
+                    gp.ui.showMessage("White Key!", new Font("Arial",Font.BOLD,30),Color.white);
                     break;
                 case "door":
                     gp.obj[index]=null;
