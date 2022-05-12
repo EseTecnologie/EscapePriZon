@@ -63,21 +63,25 @@ public class CollisionChecker {
                 if(tileNum1==61||tileNum2==61){
                     if(p.redKey==true){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==62||tileNum2==62){
                     if(p.greenKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==63||tileNum2==63){
                     if(p.purpleKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==64||tileNum2==64){
                     if(p.whiteKey){
                         entity.collisionOn = false;
+                        gp.ui.finish=true;
                         break;
                     }
                 }
@@ -91,21 +95,25 @@ public class CollisionChecker {
                 if(tileNum1==61||tileNum2==61){
                     if(p.redKey==true){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==62||tileNum2==62){
                     if(p.greenKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==63||tileNum2==63){
                     if(p.purpleKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==64||tileNum2==64){
                     if(p.whiteKey){
                         entity.collisionOn = false;
+                        gp.ui.finish=true;
                         break;
                     }
                 }
@@ -119,21 +127,25 @@ public class CollisionChecker {
                 if(tileNum1==61||tileNum2==61){
                     if(p.redKey==true){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==62||tileNum2==62){
                     if(p.greenKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==63||tileNum2==63){
                     if(p.purpleKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==64||tileNum2==64){
                     if(p.whiteKey){
                         entity.collisionOn = false;
+                        gp.ui.finish=true;
                         break;
                     }
                 }
@@ -147,21 +159,25 @@ public class CollisionChecker {
                 if(tileNum1==61||tileNum2==61){
                     if(p.redKey==true){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==62||tileNum2==62){
                     if(p.greenKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==63||tileNum2==63){
                     if(p.purpleKey){
                         entity.collisionOn = false;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }else  if(tileNum1==64||tileNum2==64){
                     if(p.whiteKey){
                         entity.collisionOn = false;
+                        gp.ui.finish=true;
                         break;
                     }
                 }
