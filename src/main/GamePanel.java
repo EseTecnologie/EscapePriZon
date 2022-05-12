@@ -1,6 +1,7 @@
 package main;
 
 import entity.Player;
+import object.SuperObject;
 import tile.TileManager;
 
 import javax.swing.*;
@@ -78,11 +79,25 @@ public class GamePanel extends JPanel implements Runnable {
 
     final int FPS = 60;
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler();
+    KeyHandler keyH = new KeyHandler(this);
     Thread gameThread;
-    //public CollisionChecker collisionChecker = new CollisionChecker(this);
+    public CollisionChecker collisionChecker = new CollisionChecker(this);
+    public AssetSetter aSetter=new AssetSetter(this);
     public Player player = new Player(this, keyH);
 
+    public SuperObject obj[]=new SuperObject[40];
+    public UI ui=new UI(this);
+
+
+    //game state
+    public int gameState;
+    public final int playState=1;
+    public final int pauseState=2;
+
+    public void setupGame(){
+        aSetter.setObject();
+        gameState=playState;
+    }
     public GamePanel(){
         this. setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
@@ -136,7 +151,12 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update(){
-        player.update();
+        if(gameState==playState){
+            player.update();
+        }
+        if(gameState==pauseState){
+
+        }
     }
 
     /**
@@ -147,10 +167,18 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-
+        //tile
         tileM.draw(g2);
+        //object
+        for (int i=0;i<obj.length;i++){
+            if(obj[i]!=null){
+                obj[i].draw(g2,this);
+            }
+        }
+        //player
         player.draw(g2);
-
+        //UI
+        ui.draw(g2);
         g2.dispose();
     }
 }
