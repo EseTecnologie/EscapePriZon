@@ -26,6 +26,11 @@ public class Player extends Entity {
     public final int screenX;
     /** attributo per dichiarare la posizione sulla corditata Y */
     public final int screenY;
+
+   public boolean redKey=false;
+    public  boolean greenKey=false;
+    public boolean whiteKey=false;
+    public boolean purpleKey=false;
     /**
      @brief costruttore del player
 
@@ -43,6 +48,8 @@ public class Player extends Entity {
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
         solidArea = new Rectangle(8, 16, 32, 32);
+        solidAreaDefaultX= solidArea.x;
+        solidAreaDefaultY=solidArea.y;
 
         setDefaultValues();
         getPlayerImage();
@@ -58,7 +65,7 @@ public class Player extends Entity {
      */
     public void setDefaultValues() {
         worldX = gp.tileSize * 68;
-        worldY = gp.tileSize * 31;
+        worldY = gp.tileSize * 32;
         speed = 5;
         direction = "down";
     }
@@ -107,6 +114,32 @@ public class Player extends Entity {
         } else if (keyH.leftPressed) {
             direction = "left";
             simulateWalking();
+        }
+    }
+    public void pickUpOnject(int index){
+        if(index!=999){
+            String objetName=gp.obj[index].name;
+            switch (objetName){
+                case "redKey":
+                    redKey=true;
+                    gp.obj[index]=null;
+                    break;
+                case "GreenKey":
+                    greenKey=true;
+                    gp.obj[index]=null;
+                    break;
+                case "PurpleKey":
+                    purpleKey=true;
+                    gp.obj[index]=null;
+                    break;
+                case "WhiteKey":
+                    whiteKey=true;
+                    gp.obj[index]=null;
+                    break;
+                case "door":
+                    gp.obj[index]=null;
+                    break;
+            }
         }
     }
     /**
@@ -169,7 +202,11 @@ public class Player extends Entity {
 
         //tile collision
         collisionOn = false;
-        gp.collisionChecker.checkTile(this);
+        gp.collisionChecker.checkTile(this,this);
+
+        //check objet collision
+       int objIndex=gp.collisionChecker.checkObject(this,true);
+        pickUpOnject(objIndex);
 
         if (!collisionOn)
             switch (direction) {
