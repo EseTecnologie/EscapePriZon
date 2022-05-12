@@ -18,8 +18,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class Player extends Entity {
-    /** GamePanel per aggiornare le informazioni del player */
-    GamePanel gp;
     /** KeyHandler per effettuare i movimenti del player */
     KeyHandler keyH;
     /** attributo per dichiarare la posizione sulla corditata X */
@@ -41,7 +39,7 @@ public class Player extends Entity {
      @param  keyH KeyHandler per utilizzare il keylistener
      */
     public Player(GamePanel gp, KeyHandler keyH) {
-        this.gp = gp;
+        super(gp);
         this.keyH = keyH;
 
         screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
@@ -79,7 +77,7 @@ public class Player extends Entity {
      */
 
     public void getPlayerImage() {
-        try {
+        /*try {
             up1 = ImageIO.read(new File("resources/player/boy_up_1.png"));
             up2 = ImageIO.read(new File("resources/player/boy_up_2.png"));
             down1 = ImageIO.read(new File("resources/player/boy_down_1.png"));
@@ -90,7 +88,15 @@ public class Player extends Entity {
             right2 = ImageIO.read(new File("resources/player/boy_right_2.png"));
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+        up1 = setup("resources/player/boy_up_1");
+        up2 = setup("resources/player/boy_up_2");
+        down1 = setup("resources/player/boy_down_1");
+        down2 = setup("resources/player/boy_down_2");
+        left1 = setup("resources/player/boy_left_1");
+        left2 = setup("resources/player/boy_left_2");
+        right1 = setup("resources/player/boy_right_1");
+        right2 = setup("resources/player/boy_right_2");
     }
     /**
      @brief medoto update()

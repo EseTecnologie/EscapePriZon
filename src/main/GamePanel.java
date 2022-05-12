@@ -1,5 +1,6 @@
 package main;
 
+import entity.Entity;
 import entity.Player;
 import object.SuperObject;
 import tile.TileManager;
@@ -101,6 +102,11 @@ public class GamePanel extends JPanel implements Runnable {
     public Player player = new Player(this, keyH);
 
     public SuperObject obj[]=new SuperObject[40];
+
+    /**
+     * Creazione di un array di identità
+     */
+    public Entity npc[] = new Entity[10];
     public UI ui=new UI(this);
 
 
@@ -111,6 +117,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setupGame(){
         aSetter.setObject();
+        aSetter.setNpc();
         gameState=playState;
     }
     public GamePanel(){
@@ -193,6 +200,14 @@ public class GamePanel extends JPanel implements Runnable {
                 obj[i].draw(g2,this);
             }
         }
+        //npc
+
+        for(int i = 0; i< npc.length; i++){
+            if(npc[i] != null){
+                npc[i].draw(g2);
+            }
+        }
+
         //player
         player.draw(g2);
         //UI
