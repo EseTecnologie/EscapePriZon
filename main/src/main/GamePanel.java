@@ -26,7 +26,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     final int FPS = 60;
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler();
+    KeyHandler keyH = new KeyHandler(this);
     Thread gameThread;
    public CollisionChecker collisionChecker = new CollisionChecker(this);
    public AssetSetter aSetter=new AssetSetter(this);
@@ -34,8 +34,15 @@ public class GamePanel extends JPanel implements Runnable {
     public SuperObject obj[]=new SuperObject[40];
     public UI ui=new UI(this);
 
+
+    //game state
+    public int gameState;
+    public final int playState=1;
+    public final int pauseState=2;
+
 public void setupGame(){
     aSetter.setObject();
+    gameState=playState;
 }
     public GamePanel(){
         this. setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -84,7 +91,12 @@ public void setupGame(){
     }
 
     public void update(){
-        player.update();
+    if(gameState==playState){
+    player.update();
+    }
+    if(gameState==pauseState){
+
+    }
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
