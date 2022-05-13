@@ -21,6 +21,8 @@ public class KeyHandler implements KeyListener {
 
     /** attributi booleani up, down, left e right che vengono settati a true se viene premuto il tasto corrispondente al movimento che deve effettuare*/
     public boolean upPressed, downPressed, leftPressed, rightPressed;
+    //DEBUG
+    boolean checkDrawTime;
     GamePanel gp;
     public KeyHandler(GamePanel gp){
         this.gp=gp;
@@ -56,6 +58,15 @@ public class KeyHandler implements KeyListener {
                 gp.gameState=gp.pauseState;
             }else if(gp.gameState==gp.pauseState){
     gp.gameState=gp.playState;
+            }
+        }
+
+        //DEBUG
+        if(code == KeyEvent.VK_T){
+            if(checkDrawTime == false){
+                checkDrawTime = true;
+            }else if (checkDrawTime == true){
+                checkDrawTime = false;
             }
         }
     }

@@ -4,7 +4,8 @@ import java.awt.image.BufferedImage;
 
 //TODO implementami
 
-public class UtilityTool {
+public class
+UtilityTool {
     public UtilityTool() {
     }
 
