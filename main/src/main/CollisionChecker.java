@@ -39,6 +39,7 @@ public class CollisionChecker {
      crea intorno all'entità un quadrato per controllare la collisione controlo la tile
      utilizzando al'attributo direction del entity controlla a seconda della direzione
      se va in contatto con una tile con la quale può passargli sopra o con la quale si deve bloccare
+     controllo per le chiavi con apertura porte
 
      @param  entity riceve come parametro il
      */
@@ -61,7 +62,7 @@ public class CollisionChecker {
                 tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
                 if(tileNum1==61||tileNum2==61){
-                    if(p.redKey==true){
+                    if(p.redKey){
                         entity.collisionOn = false;
                         gp.ui.showMessage("Open Door");
                         break;
@@ -93,7 +94,7 @@ public class CollisionChecker {
                 tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityBottomRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
                 if(tileNum1==61||tileNum2==61){
-                    if(p.redKey==true){
+                    if(p.redKey){
                         entity.collisionOn = false;
                         gp.ui.showMessage("Open Door");
                         break;
@@ -125,7 +126,7 @@ public class CollisionChecker {
                 tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[entityLeftCol][entityBottomRow];
                 if(tileNum1==61||tileNum2==61){
-                    if(p.redKey==true){
+                    if(p.redKey){
                         entity.collisionOn = false;
                         gp.ui.showMessage("Open Door");
                         break;
@@ -157,7 +158,7 @@ public class CollisionChecker {
                 tileNum1 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
                 if(tileNum1==61||tileNum2==61){
-                    if(p.redKey==true){
+                    if(p.redKey){
                         entity.collisionOn = false;
                         gp.ui.showMessage("Open Door");
                         break;
