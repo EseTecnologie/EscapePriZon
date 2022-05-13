@@ -49,15 +49,15 @@ public class UI {
             g2.setColor(Color.white);
 
             text="you found the exit!";
-            textLength=getXforCenterText(text);
+            textLength=(int)g2.getFontMetrics().getStringBounds(text,g2).getWidth();
             x=gp.screenWidth/2-textLength/2;
             y=gp.screenHeight/2-(gp.tileSize*3);
-
             g2.drawString(text,x,y);
+
             g2.setFont(arial_80);
             g2.setColor(Color.yellow);
             text="Congratulations";
-            textLength=getXforCenterText(text);
+            textLength=(int)g2.getFontMetrics().getStringBounds(text,g2).getWidth();
             x=gp.screenWidth/2-textLength/2;
             y=gp.screenHeight/2+(gp.tileSize*3);
 
