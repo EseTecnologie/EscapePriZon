@@ -66,7 +66,7 @@ public class Player extends Entity {
     public void setDefaultValues() {
         worldX = gp.tileSize * 68;
         worldY = gp.tileSize * 32;
-        speed = 5;
+        speed = 4;
         direction = "down";
     }
     /**
@@ -144,6 +144,12 @@ public class Player extends Entity {
                 case "door":
                     gp.obj[index]=null;
                     break;
+                case "boostspeed":
+                    speed+=2;
+                    gp.obj[index]=null;
+                    gp.ui.showMessage("Boost Speed!", new Font("Arial",Font.BOLD,30),Color.orange);
+                    break;
+
             }
         }
     }
