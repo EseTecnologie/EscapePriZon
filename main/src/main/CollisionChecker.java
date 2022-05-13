@@ -93,6 +93,11 @@ public class CollisionChecker {
                 entityBottomRow = (entityBottomWorldY + entity.speed) / gp.tileSize;
                 tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityBottomRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
+                if((entityLeftCol==15&&entityBottomRow==88)||(entityRightCol==15&&entityBottomRow==88)){
+                    entity.collisionOn = false;
+                    gp.ui.finish=true;
+                    break;
+                }
                 if(tileNum1==61||tileNum2==61){
                     if(p.redKey){
                         entity.collisionOn = false;
@@ -107,14 +112,13 @@ public class CollisionChecker {
                     }
                 }else  if(tileNum1==63||tileNum2==63){
                     if(p.purpleKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
+
                         break;
                     }
                 }else  if(tileNum1==64||tileNum2==64){
                     if(p.whiteKey){
                         entity.collisionOn = false;
-                        gp.ui.finish=true;
+                        gp.ui.showMessage("Open Door");
                         break;
                     }
                 }
