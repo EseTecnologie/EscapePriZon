@@ -20,7 +20,7 @@ public class GamePanel extends JPanel implements Runnable {
     //World settings
     public final int maxWorldCol = 92;
     public final int maxWorldRow = 93;
-    public final int worldWith = tileSize*maxWorldCol;
+    public final int worldWidth = tileSize*maxWorldCol;
     public final int worldHeight = tileSize*maxWorldRow;
 
 
@@ -37,12 +37,13 @@ public class GamePanel extends JPanel implements Runnable {
 
     //game state
     public int gameState;
+    public int titleState=0;
     public final int playState=1;
     public final int pauseState=2;
 
 public void setupGame(){
     aSetter.setObject();
-    gameState=playState;
+    gameState=titleState;
 }
     public GamePanel(){
         this. setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -102,18 +103,23 @@ public void setupGame(){
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-    //tile
-        tileM.draw(g2);
-        //object
-        for (int i=0;i<obj.length;i++){
-            if(obj[i]!=null){
-                obj[i].draw(g2,this);
+        //tile screen
+        if(gameState==titleState){
+            ui.draw(g2);
+        }else{
+            //tile
+            tileM.draw(g2);
+            //object
+            for (int i=0;i<obj.length;i++){
+                if(obj[i]!=null){
+                    obj[i].draw(g2,this);
+                }
             }
+            //player
+            player.draw(g2);
+            //UI
+            ui.draw(g2);
+            g2.dispose();
         }
-        //player
-        player.draw(g2);
-        //UI
-        ui.draw(g2);
-        g2.dispose();
     }
 }
