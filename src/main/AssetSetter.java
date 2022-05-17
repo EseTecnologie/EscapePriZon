@@ -32,6 +32,15 @@ public class AssetSetter {
         gp.npc[0].worldX = gp.tileSize*68;
         gp.npc[0].worldY = gp.tileSize*27;
 
+
+        gp.npc[1] = new NPC_Guard(gp);
+        gp.npc[1].worldX = gp.tileSize*60;
+        gp.npc[1].worldY = gp.tileSize*28;
+
+
+        gp.npc[2] = new NPC_Guard(gp);
+        gp.npc[2].worldX = gp.tileSize*80;
+        gp.npc[2].worldY = gp.tileSize*29;
     }
 
 }
