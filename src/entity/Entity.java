@@ -19,18 +19,52 @@ public class Entity {
     public int spriteCounter = 0;
     public int spriteNum = 1;
     public Rectangle solidArea;
-    public int solidAreaDefaultX,solidAreaDefaultY;
+    public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
+    public int actionLockCounter = 0;
 
     public Entity(GamePanel gp) {
         this.gp = gp;
-        solidArea = new Rectangle(0, 0 , gp.tileSize, gp.tileSize);    }
+        solidArea = new Rectangle(0, 0, gp.tileSize, gp.tileSize);
+    }
 
-    public BufferedImage setup(String imagePath){
+    public void setAction() {
+    }
+
+    public void update() {
+
+        setAction();
+
+        collisionOn = false;
+        gp.collisionChecker.checkTile(this);
+        gp.collisionChecker.checkObject(this, false);
+        gp.collisionChecker.checkPlayer(this);
+
+        if (!collisionOn) {
+            switch (direction) {
+                case "up" -> worldY -= speed;
+                case "down" -> worldY += speed;
+                case "left" -> worldX -= speed;
+                case "right" -> worldX += speed;
+
+            }
+        }
+
+        spriteCounter++;
+        if (spriteCounter > 10) {
+            if (spriteNum == 1)
+                spriteNum = 2;
+            else if (spriteNum == 2)
+                spriteNum = 1;
+            spriteCounter = 0;
+        }
+    }
+
+    public BufferedImage setup(String imagePath) {
         UtilityTool uTool = new UtilityTool();
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File(imagePath+".png"));
+            image = ImageIO.read(new File(imagePath + ".png"));
             // right2 = ImageIO.read(new File("resources/player/boy_right_2.png"));
             image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
         } catch (IOException e) {
@@ -49,7 +83,7 @@ public class Entity {
         if (worldX + gp.tileSize > (gp.player.worldX - gp.player.screenX) &&
                 worldY + gp.tileSize > (gp.player.worldY - gp.player.screenY) &&
                 worldX - gp.tileSize < (gp.player.worldX + gp.player.screenX) &&
-                worldY - gp.tileSize < (gp.player.worldY + gp.player.screenY)){
+                worldY - gp.tileSize < (gp.player.worldY + gp.player.screenY)) {
 
             switch (direction) {
                 case "up":
@@ -78,6 +112,7 @@ public class Entity {
                     break;
             }
 
-            g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);}
+            g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+        }
     }
 }

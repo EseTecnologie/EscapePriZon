@@ -2,13 +2,14 @@ package entity;
 
 import main.GamePanel;
 
-//TODO movimenti npc
-public class NPC_Guard extends Entity{
+import java.util.Random;
+
+public class NPC_Guard extends Entity {
     public NPC_Guard(GamePanel gp) {
         super(gp);
 
-        direction = "down";
-        speed = 4;
+        direction = "left";
+        speed = 2;
 
         getGuardImage();
     }
@@ -34,5 +35,28 @@ public class NPC_Guard extends Entity{
         left2 = setup("resources/npc/npc_left_2");
         right1 = setup("resources/npc/npc_right_1");
         right2 = setup("resources/npc/npc_right_2");
+    }
+
+    public void setAction() {
+        actionLockCounter++;
+
+        if (actionLockCounter == 120) {
+            Random random = new Random();
+            int i = random.nextInt(100) + 1;
+
+            if (i <= 25) {
+                direction = "up";
+            } else if (i <= 50) {
+                direction = "down";
+            } else if (i <= 75) {
+                direction = "right";
+            } else {
+                direction = "left";
+            }
+
+            actionLockCounter = 0;
+        }
+
+
     }
 }

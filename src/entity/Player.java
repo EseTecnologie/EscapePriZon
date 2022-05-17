@@ -153,6 +153,11 @@ public class Player extends Entity {
             }
         }
     }
+    public void interractNPC(int index){
+        if(index != 999){
+            System.out.println("npc hitted");
+        }
+    }
     /**
      @brief medoto draw()
 
@@ -219,7 +224,7 @@ public class Player extends Entity {
        int objIndex=gp.collisionChecker.checkObject(this,true);
         pickUpOnject(objIndex);
 
-        if (!collisionOn)
+        if (!collisionOn) {
             switch (direction) {
                 case "up" -> worldY -= speed;
                 case "down" -> worldY += speed;
@@ -227,5 +232,10 @@ public class Player extends Entity {
                 case "right" -> worldX += speed;
 
             }
+        }
+
+        //check npc collision
+        int npcIndex = gp.collisionChecker.checkEntity(this, gp.npc);
+        interractNPC(npcIndex);
     }
 }
