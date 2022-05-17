@@ -1,6 +1,7 @@
 package tile;
 
 import main.GamePanel;
+import main.UtilityTool;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,31 +16,34 @@ import java.io.*;
  * @author Sottocasa Michele
  * @version 1.0
  * @since 02/05/2022
- *
  */
 public class TileManager {
 
     /**
      * Variabile locale del {@link GamePanel} sul quale verranno disegnati i tile
      * Assegnazione nel costruttore
+     *
      * @since 1.0
      */
-    private GamePanel gp;
+    private final GamePanel gp;
     /**
      * Array contenente i tile successivamente importati con il metodo loadTiles()
      * Assegnazione nel costruttore
+     *
      * @since 1.0
      */
     public Tile[] tile;
     /**
      * Matrice contenente la mappa successivamente importata nel metodo loadMap()
      * Assegnazione nel costruttore
+     *
      * @since 1.0
      */
-    public int mapTileNum[][];
+    public int[][] mapTileNum;
     /**
      * {@link BufferedImage} nel quale verrrà salvata l'immagine contenente tutti i tile
      * Assegnazione nel costruttore
+     *
      * @since 1.0
      */
     public BufferedImage img;
@@ -61,25 +65,27 @@ public class TileManager {
      * a true la variabile che richiede collisione. L'indice dell'array corrisponde all'ID del
      * singolo tile.
      *
-     * @roules L'immagine passata deve contenere i tile su un'unica riga
-     *
-     *
      * @param path percorso dell'imagine contenente i tile per la generazione della mappa
-     *
+     * @roules L'immagine passata deve contenere i tile su un'unica riga
      * @since 1.0
      */
     public void loadTiles(String path) {
-        try{
-            img=ImageIO.read(new File(path));
-        }catch (IOException e){
-
+        try {
+            img = ImageIO.read(new File(path));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+        UtilityTool uTool = new UtilityTool();
         for (int i = 0; i < tile.length; i++) {
-            tile[i]=new Tile();
+            tile[i] = new Tile();
 
             tile[i].image = img.getSubimage(i * gp.originalTitleSize, 0, gp.originalTitleSize, gp.originalTitleSize);
-            /*if(i==0||i==1||i==2||i==3||i==4||i==5||i==6||i==7||i==8||i==9||i==10||i==11||i==12||i==13||i==14||i==15||i==16||i==17||i==18||i==19||i==20||i==21||i==22||i==23||i==24||i==25||i==26||i==27||i==28||i==29||i==30||i==31||i==32||i==33||i==34||i==35||i==36||i==37||i==38||i==43||i==44||i==45||i==46||i==47||i==48||i==49||i==50||i==51||i==53||i==58||i==59||i==60||i==61||i==62||i==63||i==64||i==66||i==67||i==68||i==73||i==74||i==82||i==88||i==89||i==92||i==93||i==97||i==104||i==107||i==110||i==112||i==119){
-                tile[i].collision=true;}*/
+            if (i == 0 || i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9 || i == 10 || i == 11 || i == 12 || i == 13 || i == 14 || i == 15 || i == 16 || i == 17 || i == 18 || i == 19 || i == 20 || i == 21 || i == 22 || i == 23 || i == 24 || i == 25 || i == 26 || i == 27 || i == 28 || i == 29 || i == 30 || i == 31 || i == 32 || i == 33 || i == 34 || i == 35 || i == 36 || i == 37 || i == 38 || i == 43 || i == 44 || i == 45 || i == 46 || i == 47 || i == 48 || i == 49 || i == 50 || i == 51 || i == 53 || i == 58 || i == 59 || i == 60 || i == 61 || i == 62 || i == 63 || i == 64 || i == 66 || i == 67 || i == 68 || i == 73 || i == 74 || i == 82 || i == 88 || i == 89 || i == 92 || i == 93 || i == 97 || i == 104 || i == 107 || i == 110 || i == 112 || i == 119) {
+                tile[i].collision = true;
+            }
+
+            tile[i].image = uTool.scaleImage(tile[i].image, gp.tileSize, gp.tileSize);
+
         }
     }
 
@@ -89,11 +95,9 @@ public class TileManager {
      * lettura corrente in una cella matrice. Al termine di ogni riga, si procede all'inserimento dei dati nella
      * riga successiva della matrice
      *
+     * @param path, percorso del file txt contentente la disposizione dei tile
      * @roules Il file deve contenere gli ID dei tile devono essere numerici e devono essere separati
      * solamente da unospazio
-     *
-     * @param path, percorso del file txt contentente la disposizione dei tile
-     *
      * @since 1.0
      */
     public void loadMap(String path) {
@@ -109,7 +113,7 @@ public class TileManager {
             while (col < gp.maxWorldCol && row < gp.maxWorldRow) {
                 String line = br.readLine();
                 while (col < gp.maxWorldCol) {
-                    String numbers[] = line.split(" ");
+                    String[] numbers = line.split(" ");
 
                     int num = Integer.parseInt(numbers[col]);
                     mapTileNum[col][row] = num;
@@ -128,14 +132,13 @@ public class TileManager {
 
     /**
      * Metodo per disegnare la mappa sul un pannello {@link Graphics2D}
-     *
+     * <p>
      * Si procede a disegnare riga per riga la mappa, partendo dall'angolo in alto a sinistra, fino al raggiungimento
      * dell'angolo opposto.
-     *
+     * <p>
      * Viene disegnato un tile per volta
      *
      * @param g pannello {@link Graphics2D}
-     *
      * @since 1.0
      */
     public void draw(Graphics2D g) {
@@ -154,7 +157,7 @@ public class TileManager {
                     worldY + gp.tileSize > (gp.player.worldY - gp.player.screenY) &&
                     worldX - gp.tileSize < (gp.player.worldX + gp.player.screenX) &&
                     worldY - gp.tileSize < (gp.player.worldY + gp.player.screenY))
-                g.drawImage(tile[tileNum-1].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+                g.drawImage(tile[tileNum - 1].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
             worldCol++;
             if (worldCol == gp.maxWorldCol) {
                 worldCol = 0;
