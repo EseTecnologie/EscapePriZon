@@ -3,8 +3,6 @@ package main;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-//TODO implementami
-
 public class UtilityTool {
 
     public UtilityTool() {

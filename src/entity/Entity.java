@@ -30,7 +30,7 @@ public class Entity {
         UtilityTool uTool = new UtilityTool();
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File(imagePath+".png")); //TODO BUG don't work the image getter
+            image = ImageIO.read(new File(imagePath+".png"));
             // right2 = ImageIO.read(new File("resources/player/boy_right_2.png"));
             image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
         } catch (IOException e) {
