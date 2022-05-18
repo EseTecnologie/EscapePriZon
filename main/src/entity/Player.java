@@ -213,7 +213,7 @@ public class Player extends Entity {
 
         //tile collision
         collisionOn = false;
-        gp.collisionChecker.checkTile(this,this);
+        gp.collisionChecker.checkTile(this);
 
         //check objet collision
        int objIndex=gp.collisionChecker.checkObject(this,true);

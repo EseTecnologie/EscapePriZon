@@ -23,14 +23,16 @@ import entity.Player;
 public class CollisionChecker {
     /** GamePanel gp per utillizzare tutte le funzioni del GamePanel del gioco */
     GamePanel gp;
+    Player p;
     /**
      @brief costruttore con passaggio di parametri
 
      riceve come parametro il GamePanel e lo copia del attributo locale
      @param  gp passaggio del GamePanel quando viene inizializzato l'oggetto
      */
-    public CollisionChecker(GamePanel gp) {
+    public CollisionChecker(GamePanel gp,Player p) {
         this.gp = gp;
+        this.p=p;
     }
 
     /**
@@ -43,7 +45,7 @@ public class CollisionChecker {
 
      @param  entity riceve come parametro il
      */
-    public void checkTile(Entity entity, Player p){
+    public void checkTile(Entity entity){
 
         int entityLeftWorldX = entity.worldX + entity.solidArea.x;
         int entityRightWorldX = entity.worldX + entity.solidArea.x + entity.solidArea.width;
@@ -61,30 +63,8 @@ public class CollisionChecker {
                 entityTopRow = (entityTopWorldY - entity.speed) / gp.tileSize;
                 tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
-                if(tileNum1==61||tileNum2==61){
-                    if(p.redKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==62||tileNum2==62){
-                    if(p.greenKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==63||tileNum2==63){
-                    if(p.purpleKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==64||tileNum2==64){
-                    if(p.whiteKey){
-                        entity.collisionOn = false;
-                        gp.ui.finish=true;
-                        break;
-                    }
+                if(checkDoor(tileNum1,tileNum2,entity)){
+                    break;
                 }
                 if (gp.tileM.tile[tileNum1-1].collision || gp.tileM.tile[tileNum2-1].collision)
                     entity.collisionOn = true;
@@ -98,29 +78,8 @@ public class CollisionChecker {
                     gp.ui.finish=true;
                     break;
                 }
-                if(tileNum1==61||tileNum2==61){
-                    if(p.redKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==62||tileNum2==62){
-                    if(p.greenKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==63||tileNum2==63){
-                    if(p.purpleKey){
-
-                        break;
-                    }
-                }else  if(tileNum1==64||tileNum2==64){
-                    if(p.whiteKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
+                if(checkDoor(tileNum1,tileNum2,entity)){
+                    break;
                 }
                 if (gp.tileM.tile[tileNum1-1].collision || gp.tileM.tile[tileNum2-1].collision)
                     entity.collisionOn = true;
@@ -134,30 +93,8 @@ public class CollisionChecker {
                     gp.ui.finish=true;
                     break;
                 }
-                if(tileNum1==61||tileNum2==61){
-                    if(p.redKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==62||tileNum2==62){
-                    if(p.greenKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==63||tileNum2==63){
-                    if(p.purpleKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==64||tileNum2==64){
-                    if(p.whiteKey){
-                        entity.collisionOn = false;
-                        gp.ui.finish=true;
-                        break;
-                    }
+                if(checkDoor(tileNum1,tileNum2,entity)){
+                    break;
                 }
                 if (gp.tileM.tile[tileNum1-1].collision || gp.tileM.tile[tileNum2-1].collision)
                     entity.collisionOn = true;
@@ -166,35 +103,42 @@ public class CollisionChecker {
                 entityRightCol = (entityRightWorldX + entity.speed) / gp.tileSize;
                 tileNum1 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
-                if(tileNum1==61||tileNum2==61){
-                    if(p.redKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==62||tileNum2==62){
-                    if(p.greenKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==63||tileNum2==63){
-                    if(p.purpleKey){
-                        entity.collisionOn = false;
-                        gp.ui.showMessage("Open Door");
-                        break;
-                    }
-                }else  if(tileNum1==64||tileNum2==64){
-                    if(p.whiteKey){
-                        entity.collisionOn = false;
-                        gp.ui.finish=true;
-                        break;
-                    }
+                if(checkDoor(tileNum1,tileNum2,entity)){
+                    break;
                 }
                 if (gp.tileM.tile[tileNum1-1].collision || gp.tileM.tile[tileNum2-1].collision)
                     entity.collisionOn = true;
             }
         }
+    }
+    public boolean checkDoor(int tileNum1,int tileNum2,Entity e) {
+        if (tileNum1 == 61 || tileNum2 == 61) {
+            if (p.redKey) {
+                e.collisionOn = false;
+                gp.ui.showMessage("Open Door");
+                return true;
+            }
+        } else if (tileNum1 == 62 || tileNum2 == 62) {
+            if (p.greenKey) {
+                e.collisionOn = false;
+                gp.ui.showMessage("Open Door");
+                return true;
+
+            }
+        } else if (tileNum1 == 63 || tileNum2 == 63) {
+            if (p.purpleKey) {
+                e.collisionOn = false;
+                gp.ui.showMessage("Open Door");
+                return true;
+            }
+        } else if (tileNum1 == 64 || tileNum2 == 64) {
+            if (p.whiteKey) {
+                e.collisionOn = false;
+                gp.ui.showMessage("Open Door");
+                return true;
+            }
+        }
+        return false;
     }
     public int checkObject(Entity entity,boolean player){
         int index=999;
