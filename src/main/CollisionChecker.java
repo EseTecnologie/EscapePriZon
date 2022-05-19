@@ -28,9 +28,8 @@ public class CollisionChecker {
      riceve come parametro il GamePanel e lo copia del attributo locale
      @param  gp passaggio del GamePanel quando viene inizializzato l'oggetto
      */
-    public CollisionChecker(GamePanel gp,Player p) {
+    public CollisionChecker(GamePanel gp) {
         this.gp = gp;
-        this.p=p;
     }
 
     /**
@@ -61,6 +60,7 @@ public class CollisionChecker {
                 entityTopRow = (entityTopWorldY - entity.speed) / gp.tileSize;
                 tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
+
                 if(checkDoor(tileNum1,tileNum2,entity)){
                     break;
                 }
@@ -111,26 +111,26 @@ public class CollisionChecker {
     }
     public boolean checkDoor(int tileNum1,int tileNum2,Entity e) {
         if (tileNum1 == 61 || tileNum2 == 61) {
-            if (p.redKey) {
+            if (e.redKey) {
                 e.collisionOn = false;
                 gp.ui.showMessage("Open Door");
                 return true;
             }
         } else if (tileNum1 == 62 || tileNum2 == 62) {
-            if (p.greenKey) {
+            if (e.greenKey) {
                 e.collisionOn = false;
                 gp.ui.showMessage("Open Door");
                 return true;
 
             }
         } else if (tileNum1 == 63 || tileNum2 == 63) {
-            if (p.purpleKey) {
+            if (e.purpleKey) {
                 e.collisionOn = false;
                 gp.ui.showMessage("Open Door");
                 return true;
             }
         } else if (tileNum1 == 64 || tileNum2 == 64) {
-            if (p.whiteKey) {
+            if (e.whiteKey) {
                 e.collisionOn = false;
                 gp.ui.showMessage("Open Door");
                 return true;

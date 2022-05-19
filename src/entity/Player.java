@@ -27,10 +27,7 @@ public class Player extends Entity {
     /** attributo per dichiarare la posizione sulla corditata Y */
     public final int screenY;
 
-    public boolean redKey=false;
-    public  boolean greenKey=false;
-    public boolean whiteKey=false;
-    public boolean purpleKey=false;
+
 
     public Player(){
 this.screenX=0;

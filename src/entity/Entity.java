@@ -23,6 +23,11 @@ public class Entity extends Thread{
     public boolean collisionOn = false;
     public int actionLockCounter = 0;
 
+    public boolean redKey=false;
+    public  boolean greenKey=false;
+    public boolean whiteKey=false;
+    public boolean purpleKey=false;
+
     public Entity(){
 
     }
