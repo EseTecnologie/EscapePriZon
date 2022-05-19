@@ -22,16 +22,26 @@ public class AssetSetter {
         gp.obj[3]=new OBJ_Key("white");
         gp.obj[3].worldX= 87*gp.tileSize;
         gp.obj[3].worldY=6*gp.tileSize;
-
-
-
     }
+    int[] x={12,15,50,68,79};
+    int[] y={29,29,29,29,29};
 
     public void setNpc(){
-        gp.npc[0] = new NPC_Guard(gp);
-        gp.npc[0].worldX = gp.tileSize*21;
-        gp.npc[0].worldY = gp.tileSize*21;
-
+        for (int i=0;i<x.length;i++){
+            gp.npc[i] = new NPC_Guard(gp);
+            gp.npc[i].worldX = gp.tileSize * x[i];
+            gp.npc[i].worldY = gp.tileSize * y[i];
+            gp.npc[i].start();
+        }
     }
 
+    public void stopNpc(){
+        for (int i=0;i<gp.npc.length;i++){
+            if(gp.npc[i]!=null) {
+                gp.npc[i].interrupt();
+                gp.npc[i] = null;
+            }
+        }
+
+    }
 }

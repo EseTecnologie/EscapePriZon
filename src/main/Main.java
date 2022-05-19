@@ -10,7 +10,7 @@ import javax.swing.*;
  * @version 1.0
  */
 public class Main {
-    /**
+    /** 
      metodo main per l'inizializzazione degli oggetti
 
      metodo main per mette la creazione degli oggetti con l'inizializzazione del Frame e del GamePanel, settare il Title del Frame

@@ -106,7 +106,6 @@ public class Player extends Entity {
      player
      */
 
-
     public void update() {
         if (keyH.upPressed) {
             direction = "up";
@@ -151,6 +150,11 @@ public class Player extends Entity {
                     gp.obj[index]=null;
                     break;
             }
+        }
+    }
+    public void interractNPC(int index){
+        if(index != 999){
+            setDefaultValues();
         }
     }
     /**
@@ -219,7 +223,7 @@ public class Player extends Entity {
        int objIndex=gp.collisionChecker.checkObject(this,true);
         pickUpOnject(objIndex);
 
-        if (!collisionOn)
+        if (!collisionOn) {
             switch (direction) {
                 case "up" -> worldY -= speed;
                 case "down" -> worldY += speed;
@@ -227,5 +231,10 @@ public class Player extends Entity {
                 case "right" -> worldX += speed;
 
             }
+        }
+
+        //check npc collision
+        int npcIndex = gp.collisionChecker.checkEntity(this, gp.npc);
+        interractNPC(npcIndex);
     }
 }
