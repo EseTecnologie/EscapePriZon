@@ -119,7 +119,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int pauseState=2;
 
     public void setupGame(){
-        aSetter.setObject();
+        aSetter.setKey();
         aSetter.setBoots();
         aSetter.setNpc();
         gameState=titleState;

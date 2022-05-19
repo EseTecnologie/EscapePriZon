@@ -33,6 +33,8 @@ public class KeyHandler implements KeyListener{
 
      questo metodo serve per gestire il click su tastiera, assegna a true l'attributo corrispondente al tasto che viene schiacciato
      controllando se il tasto cliccato è uno di quelli che servono al programma
+     a seconda dello stato del gioco i tasti servono per effettuare diverse opzioni
+
      @param  e parametro con tutte le informazioni del tasto che viene cliccato
      */
     @Override

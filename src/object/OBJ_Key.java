@@ -1,3 +1,11 @@
+/**
+ * @author  federico colombo
+ * @version 1.0
+ * @file OBJ_Key.java
+ *
+ * @brief gestione del oggetto key
+ *
+ */
 package object;
 
 import javax.imageio.ImageIO;
@@ -5,6 +13,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class OBJ_Key extends SuperObject {
+    /**
+     *@brief  costruttore parametrico OBJ_Key()
+     *
+     * metodo per la gestione delle chiavi
+     *
+     * @param type riceve come parametro il tipo delle chiave
+     */
     public OBJ_Key(String type){
 
         if(type=="red"){

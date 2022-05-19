@@ -15,8 +15,14 @@ public class SuperObject {
     public int solidAreaDefaultX=0;
     public int solidAreaDefaultY=0;
     public UtilityTool uTool = new UtilityTool();
-
-
+/**
+ *@brief medoto draw()
+ *
+ * metodo per disegnare gli oggetti sul GamePanel
+ *
+ * @param g2 parametro contenente il pannello grafico sul quale verrà disegnato il player
+ * @param gp parametro GamePanel per controllare se gli oggetti sono all'interno del campo visiovo del player
+     */
     public void draw(Graphics2D g2, GamePanel gp){
 
             if(worldX!=0){

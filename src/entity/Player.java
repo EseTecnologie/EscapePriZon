@@ -27,14 +27,17 @@ public class Player extends Entity {
     /** attributo per dichiarare la posizione sulla corditata Y */
     public final int screenY;
 
+    /**
+     @brief costruttore  del player
 
-
+     metodo che inizializza la posizione a X=0 e Y=0
+     */
     public Player(){
 this.screenX=0;
 this.screenY=0;
     }
     /**
-     @brief costruttore del player
+     @brief costruttore parametrico del player
 
      metodo che inizializza la posizione dello screen e il retangolo nel quale sara presente il player
      richiama i metodi setDefaultValues per assegnare la posizione del player nel world e il getPlayerImage per
@@ -118,6 +121,14 @@ this.screenY=0;
             simulateWalking();
         }
     }
+    /**
+     @brief metodo pickUpOnject
+
+     metodo per raccogliere gli oggetti che si trovano nella mappa contorllando
+     index che viene passato come parametro dal CollisionChecker
+
+     @param  index parametro per controllare i diversi tipi di oggetti che vengono trovati
+     */
     public void pickUpOnject(int index){
         if(index!=999){
             String objetName=gp.obj[index].name;
