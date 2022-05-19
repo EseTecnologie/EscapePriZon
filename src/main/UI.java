@@ -1,11 +1,6 @@
 package main;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.nio.Buffer;
 import java.util.Objects;
 
 public class UI {
@@ -17,7 +12,6 @@ public class UI {
     int messageCounter=0;
     Color c;
     public boolean finish=false;
-    public int commandNum=0;
 
     public UI(GamePanel gp){
         this.gp=gp;
@@ -44,9 +38,6 @@ public class UI {
     this.g2=g2;
     g2.setFont(arial_40);
     g2.setColor(Color.white);
-    if(gp.gameState==gp.titleState){
-        drawTitleScreen();
-    }
     if(gp.gameState==gp.playState){
         if(finish){
             String text;
@@ -58,15 +49,15 @@ public class UI {
             g2.setColor(Color.white);
 
             text="you found the exit!";
-            textLength=(int)g2.getFontMetrics().getStringBounds(text,g2).getWidth();
+            textLength=getXforCenterText(text);
             x=gp.screenWidth/2-textLength/2;
             y=gp.screenHeight/2-(gp.tileSize*3);
-            g2.drawString(text,x,y);
 
+            g2.drawString(text,x,y);
             g2.setFont(arial_80);
             g2.setColor(Color.yellow);
             text="Congratulations";
-            textLength=(int)g2.getFontMetrics().getStringBounds(text,g2).getWidth();
+            textLength=getXforCenterText(text);
             x=gp.screenWidth/2-textLength/2;
             y=gp.screenHeight/2+(gp.tileSize*3);
 
@@ -90,51 +81,12 @@ public class UI {
 
 
     }
-    public void drawTitleScreen(){
-        BufferedImage background=null;
-        try{
-            background=ImageIO.read(new File("main/res/maps/escap_cover.jpg"));
-        }catch (IOException e){
-
-        }
-        g2.drawImage(background,0,gp.tileSize*2, gp.screenWidth,600,null);
-
-        //title
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,72F));
-        String text="The Escape Prizon";
-        int x=getXforCenterText(text);
-        int y=72;
-        //shadow
-        g2.setColor(new Color(243,114,32));
-        g2.drawString(text,x+5,y+5);
-        g2.setColor(Color.white);
-        g2.drawString(text,x,y);
-
-        //menu
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,48f));
-        text="Play Game";
-        x=getXforCenterText(text);
-        y+=gp.tileSize*11;
-        g2.drawString(text,x,y);
-        if(commandNum==0){
-            g2.drawString(">",x-gp.tileSize,y);
-        }
-
-        text="Quit";
-        x=getXforCenterText(text);
-        y+=gp.tileSize*1.5;
-        g2.drawString(text,x,y);
-        if(commandNum==1){
-            g2.drawString(">",x-gp.tileSize,y);
-        }
-    }
-
     public void drawPauseScreen(){
         String text = "PAUSED";
                 int x=getXforCenterText(text);
 
         int y=gp.screenHeight/2-gp.tileSize;
-        g2.setColor(new Color(243,114,32));
+        g2.setColor(Color.RED);
         g2.drawString(text,x,y);
     }
     public int getXforCenterText(String text){

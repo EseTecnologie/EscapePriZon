@@ -10,28 +10,28 @@ public class OBJ_Key extends SuperObject {
         if(type=="red"){
             name="redKey";
             try{
-                image = ImageIO.read(new File("main/res/Object/key/redkey.png"));
+                image = ImageIO.read(new File("resources/Object/key/redkey.png"));
             }catch (IOException e){
                 e.printStackTrace();
             }
         }else  if(type=="green"){
             name="GreenKey";
             try{
-                image = ImageIO.read(new File("main/res/Object/key/greenkey..png"));
+                image = ImageIO.read(new File("resources/Object/key/greenkey..png"));
             }catch (IOException e){
                 e.printStackTrace();
             }
         }else  if(type=="purple"){
             name="PurpleKey";
             try{
-                image = ImageIO.read(new File("main/res/Object/key/purplekey.png"));
+                image = ImageIO.read(new File("resources/Object/key/purplekey.png"));
             }catch (IOException e){
                 e.printStackTrace();
             }
         }else  if(type=="white"){
             name="WhiteKey";
             try{
-                image = ImageIO.read(new File("main/res/Object/key/whitekey.png"));
+                image = ImageIO.read(new File("resources/Object/key/whitekey.png"));
             }catch (IOException e){
                 e.printStackTrace();
             }

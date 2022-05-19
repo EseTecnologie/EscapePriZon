@@ -1,26 +1,17 @@
-/**
- * @author  federico colombo
- * @version 1.0
- * @file  Main.java
- *
- * @brief dichiarazione del Jframe e creazione del nuovo gamePanel.
- *
- */
 package main;
 
 import javax.swing.*;
+
 /**
+ * Punto di ingresso del programma con inizializzazione dei metodi necessari
  * @class Main
- *
- * @brief classe per l'inizializzazione dei  metodi necessari.
- *
- * la classe per la gestione del main per l'avvio del programma
+ * @author Colobo Federico, Sottocasa Michele
+ * @since 04/28/2022
+ * @version 1.0
  */
 public class Main {
-
-
-    /**
-     @brief metodo main per l'inizializzazione degli oggetti
+    /** 
+     metodo main per l'inizializzazione degli oggetti
 
      metodo main per mette la creazione degli oggetti con l'inizializzazione del Frame e del GamePanel, settare il Title del Frame
      e codice per stoppare tutti i Thread in funzione quando verrà chiuso il Frame

@@ -18,8 +18,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class Player extends Entity {
-    /** GamePanel per aggiornare le informazioni del player */
-    GamePanel gp;
     /** KeyHandler per effettuare i movimenti del player */
     KeyHandler keyH;
     /** attributo per dichiarare la posizione sulla corditata X */
@@ -41,13 +39,13 @@ public class Player extends Entity {
      @param  keyH KeyHandler per utilizzare il keylistener
      */
     public Player(GamePanel gp, KeyHandler keyH) {
-        this.gp = gp;
+        super(gp);
         this.keyH = keyH;
 
         screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
-        solidArea = new Rectangle(16, 24, 16, 16);
+        solidArea = new Rectangle(8, 16, 32, 32);
         solidAreaDefaultX= solidArea.x;
         solidAreaDefaultY=solidArea.y;
 
@@ -66,7 +64,7 @@ public class Player extends Entity {
     public void setDefaultValues() {
         worldX = gp.tileSize * 68;
         worldY = gp.tileSize * 32;
-        speed = 4;
+        speed = 5;
         direction = "down";
     }
     /**
@@ -79,18 +77,26 @@ public class Player extends Entity {
      */
 
     public void getPlayerImage() {
-        try {
-            up1 = ImageIO.read(new File("main/res/player/boy_up_1.png"));
-            up2 = ImageIO.read(new File("main/res/player/boy_up_2.png"));
-            down1 = ImageIO.read(new File("main/res/player/boy_down_1.png"));
-            down2 = ImageIO.read(new File("main/res/player/boy_down_2.png"));
-            left1 = ImageIO.read(new File("main/res/player/boy_left_1.png"));
-            left2 = ImageIO.read(new File("main/res/player/boy_left_2.png"));
-            right1 = ImageIO.read(new File("main/res/player/boy_right_1.png"));
-            right2 = ImageIO.read(new File("main/res/player/boy_right_2.png"));
+        /*try {
+            up1 = ImageIO.read(new File("resources/player/boy_up_1.png"));
+            up2 = ImageIO.read(new File("resources/player/boy_up_2.png"));
+            down1 = ImageIO.read(new File("resources/player/boy_down_1.png"));
+            down2 = ImageIO.read(new File("resources/player/boy_down_2.png"));
+            left1 = ImageIO.read(new File("resources/player/boy_left_1.png"));
+            left2 = ImageIO.read(new File("resources/player/boy_left_2.png"));
+            right1 = ImageIO.read(new File("resources/player/boy_right_1.png"));
+            right2 = ImageIO.read(new File("resources/player/boy_right_2.png"));
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+        up1 = setup("resources/player/boy_up_1");
+        up2 = setup("resources/player/boy_up_2");
+        down1 = setup("resources/player/boy_down_1");
+        down2 = setup("resources/player/boy_down_2");
+        left1 = setup("resources/player/boy_left_1");
+        left2 = setup("resources/player/boy_left_2");
+        right1 = setup("resources/player/boy_right_1");
+        right2 = setup("resources/player/boy_right_2");
     }
     /**
      @brief medoto update()
@@ -99,7 +105,6 @@ public class Player extends Entity {
      stati premuti richiama il metodo simulateWalking() per aggiornare la posizione del
      player
      */
-
 
     public void update() {
         if (keyH.upPressed) {
@@ -144,13 +149,12 @@ public class Player extends Entity {
                 case "door":
                     gp.obj[index]=null;
                     break;
-                case "boostspeed":
-                    speed+=2;
-                    gp.obj[index]=null;
-                    gp.ui.showMessage("Boost Speed!", new Font("Arial",Font.BOLD,30),Color.orange);
-                    break;
-
             }
+        }
+    }
+    public void interractNPC(int index){
+        if(index != 999){
+            setDefaultValues();
         }
     }
     /**
@@ -213,13 +217,13 @@ public class Player extends Entity {
 
         //tile collision
         collisionOn = false;
-        gp.collisionChecker.checkTile(this);
+        gp.collisionChecker.checkTile(this,this);
 
         //check objet collision
        int objIndex=gp.collisionChecker.checkObject(this,true);
         pickUpOnject(objIndex);
 
-        if (!collisionOn)
+        if (!collisionOn) {
             switch (direction) {
                 case "up" -> worldY -= speed;
                 case "down" -> worldY += speed;
@@ -227,5 +231,10 @@ public class Player extends Entity {
                 case "right" -> worldX += speed;
 
             }
+        }
+
+        //check npc collision
+        int npcIndex = gp.collisionChecker.checkEntity(this, gp.npc);
+        interractNPC(npcIndex);
     }
 }

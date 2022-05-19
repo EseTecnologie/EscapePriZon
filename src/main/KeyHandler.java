@@ -17,10 +17,12 @@ import java.awt.event.KeyListener;
  *
  * questa classe controlla gli eventi keyPressed e keyReleased per gestire i comandi per il movimento del player
  */
-public class KeyHandler implements KeyListener{
+public class KeyHandler implements KeyListener {
 
     /** attributi booleani up, down, left e right che vengono settati a true se viene premuto il tasto corrispondente al movimento che deve effettuare*/
     public boolean upPressed, downPressed, leftPressed, rightPressed;
+    //DEBUG
+    boolean checkDrawTime;
     GamePanel gp;
     public KeyHandler(GamePanel gp){
         this.gp=gp;
@@ -38,33 +40,6 @@ public class KeyHandler implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
-    if(gp.gameState==gp.titleState){
-        if(code == KeyEvent.VK_W){
-           gp.ui.commandNum--;
-           if(gp.ui.commandNum<0){
-               gp.ui.commandNum=1;
-           }
-        }
-        if(code == KeyEvent.VK_S){
-     gp.ui.commandNum++;
-            if(gp.ui.commandNum>1){
-                gp.ui.commandNum=0;
-            }
-        }
-        if(code==KeyEvent.VK_ENTER){
-            if(gp.ui.commandNum==0){
-                gp.gameState=gp.playState;
-            }
-            if(gp.ui.commandNum==1){
-                System.exit(0);
-            }
-        }
-    }
-    if(gp.gameState==gp.playState){
-        if(code==KeyEvent.VK_E){
-            gp.gameState=gp.titleState;
-        }
-    }
 
         if(code == KeyEvent.VK_W){
             upPressed = true;
@@ -82,12 +57,16 @@ public class KeyHandler implements KeyListener{
             if(gp.gameState==gp.playState){
                 gp.gameState=gp.pauseState;
             }else if(gp.gameState==gp.pauseState){
-                 gp.gameState=gp.playState;
+    gp.gameState=gp.playState;
             }
         }
-        if(code == KeyEvent.VK_ESCAPE){
-          if(gp.gameState==gp.pauseState){
-                gp.gameState=gp.playState;
+
+        //DEBUG
+        if(code == KeyEvent.VK_T){
+            if(checkDrawTime == false){
+                checkDrawTime = true;
+            }else if (checkDrawTime == true){
+                checkDrawTime = false;
             }
         }
     }
