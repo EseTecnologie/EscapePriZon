@@ -23,6 +23,8 @@ public class AssetSetter {
         gp.obj[3]=new OBJ_Key("white");
         gp.obj[3].worldX= 87*gp.tileSize;
         gp.obj[3].worldY=6*gp.tileSize;
+    }
+    public void setBoots(){
         gp.obj[4]=new OBJ_boostSpeed("boostspeed");
         gp.obj[4].worldX= 8*gp.tileSize;
         gp.obj[4].worldY=60*gp.tileSize;

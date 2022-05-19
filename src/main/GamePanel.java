@@ -100,9 +100,8 @@ public class GamePanel extends JPanel implements Runnable {
      * Istanza della classe {@link CollisionChecker} per la gestione delle collisioni con gli elementi
      */
     public CollisionChecker collisionChecker = new CollisionChecker(this);
+
     public AssetSetter aSetter=new AssetSetter(this);
-
-
     public SuperObject obj[]=new SuperObject[40];
 
     /**
@@ -121,6 +120,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setupGame(){
         aSetter.setObject();
+        aSetter.setBoots();
         aSetter.setNpc();
         gameState=titleState;
     }

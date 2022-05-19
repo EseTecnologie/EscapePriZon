@@ -46,6 +46,7 @@ public class Entity extends Thread{
             gp.aSetter.stopNpc();
             gp.aSetter.setNpc();
             gp.player.setDefaultValues();
+            gp.aSetter.setBoots();
         }
 
         if (!collisionOn) {
