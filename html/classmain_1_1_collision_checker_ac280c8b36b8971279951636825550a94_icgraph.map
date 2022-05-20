@@ -1,0 +1,9 @@
+<map id="checkDoor" name="checkDoor">
+<area shape="rect" id="node1" title="controlla la possibilità di aprire una porta" alt="" coords="965,31,1049,57"/>
+<area shape="rect" id="node2" href="$classmain_1_1_collision_checker.html#a860263a481536a7cc034c5103fa7bb7b" title="metodo per il controllo delle collisioni con i tiles" alt="" coords="840,31,917,57"/>
+<area shape="rect" id="node3" href="$classentity_1_1_player.html#a37f26750011a4243d2b94689e57b1f2e" title="medoto simulateWalking()" alt="" coords="597,5,792,32"/>
+<area shape="rect" id="node7" href="$classentity_1_1_entity.html#ac5c54df7ed3b930268c8d7752c101725" title="Aggiornamento delle principali logiche di gioco." alt="" coords="627,56,762,83"/>
+<area shape="rect" id="node4" href="$classentity_1_1_player.html#ac5c54df7ed3b930268c8d7752c101725" title="medoto update()" alt="" coords="411,5,549,32"/>
+<area shape="rect" id="node5" href="$classmain_1_1_game_panel.html#ac5c54df7ed3b930268c8d7752c101725" title="Aggiornamento della posizione del player nella schermata, solo nel caso in cui il gioco non è in paus..." alt="" coords="197,5,363,32"/>
+<area shape="rect" id="node6" href="$classmain_1_1_game_panel.html#a13a43e6d814de94978c515cb084873b1" title=" " alt="" coords="5,5,149,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="stopNpc" name="stopNpc">
+<area shape="rect" id="node1" title="spotNpc()" alt="" coords="188,5,259,32"/>
+<area shape="rect" id="node2" href="$classentity_1_1_entity.html#ac5c54df7ed3b930268c8d7752c101725" title="Aggiornamento delle principali logiche di gioco." alt="" coords="5,5,140,32"/>
+</map>

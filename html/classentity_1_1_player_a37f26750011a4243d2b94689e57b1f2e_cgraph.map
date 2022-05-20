@@ -1,0 +1,9 @@
+<map id="simulateWalking" name="simulateWalking">
+<area shape="rect" id="node1" title="medoto simulateWalking()" alt="" coords="5,71,124,98"/>
+<area shape="rect" id="node2" href="$classmain_1_1_collision_checker.html#a911657e9d60625541f54d46bd221cb1a" title="metodo per il controllo delle collisioni con gli oggetti" alt="" coords="182,5,373,47"/>
+<area shape="rect" id="node3" href="$classmain_1_1_collision_checker.html#a860263a481536a7cc034c5103fa7bb7b" title="metodo per il controllo delle collisioni con i tiles" alt="" coords="172,71,383,98"/>
+<area shape="rect" id="node6" href="$classentity_1_1_player.html#a6a73bbab89f7158d3eb138d934af914b" title="metodo pickUpOnject" alt="" coords="227,122,327,149"/>
+<area shape="rect" id="node4" href="$classmain_1_1_collision_checker.html#ac280c8b36b8971279951636825550a94" title="controlla la possibilità di aprire una porta" alt="" coords="431,71,648,98"/>
+<area shape="rect" id="node5" href="$classmain_1_1_u_i.html#a214fb6c3715047d4ae3e919e768e21a3" title="metodo per riceve le informazioni da scrivere" alt="" coords="696,122,849,149"/>
+<area shape="rect" id="node7" href="$classentity_1_1_player.html#a89dd25dce8cc2cf14a9aa283a91aa336" title="viene segnato nell&#39;array delle chiavi, quale chiave è stata presa e viene rimossa la visualizzazione ..." alt="" coords="508,173,571,199"/>
+</map>
