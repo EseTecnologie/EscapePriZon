@@ -84,18 +84,14 @@ this.screenY=0;
      */
 
     public void getPlayerImage() {
-        try {
-            up1 = ImageIO.read(new File("resources/player/boy_up_1.png"));
-            up2 = ImageIO.read(new File("resources/player/boy_up_2.png"));
-            down1 = ImageIO.read(new File("resources/player/boy_down_1.png"));
-            down2 = ImageIO.read(new File("resources/player/boy_down_2.png"));
-            left1 = ImageIO.read(new File("resources/player/boy_left_1.png"));
-            left2 = ImageIO.read(new File("resources/player/boy_left_2.png"));
-            right1 = ImageIO.read(new File("resources/player/boy_right_1.png"));
-            right2 = ImageIO.read(new File("resources/player/boy_right_2.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            up1 = setup("resources/player/boy_up_1");
+            up2 = setup("resources/player/boy_up_2");
+            down1 = setup("resources/player/boy_down_1");
+            down2 = setup("resources/player/boy_down_2");
+            left1 = setup("resources/player/boy_left_1");
+            left2 = setup("resources/player/boy_left_2");
+            right1 = setup("resources/player/boy_right_1");
+            right2 = setup("resources/player/boy_right_2");
     }
     /**
      @brief medoto update()
@@ -134,37 +130,29 @@ this.screenY=0;
             String objetName=gp.obj[index].name;
             switch (objetName){
                 case "redKey":
-                    keys[0]=true;
-                    gp.obj[index]=null;
-                    gp.ui.showMessage("Red Key!", new Font("Arial",Font.BOLD,30),Color.red);
+                    getKey(0, "Red Key!", index, Color.red);
                     break;
                 case "GreenKey":
-                    keys[1]=true;
-                    gp.obj[index]=null;
-                    gp.ui.showMessage("Green Key!", new Font("Arial",Font.BOLD,30),Color.green);
+                    getKey(0, "Green Key!", index, Color.green);
                     break;
                 case "PurpleKey":
-                    keys[2]=true;
-                    gp.obj[index]=null;
-                    gp.ui.showMessage("Purple Key!", new Font("Arial",Font.BOLD,30),Color.MAGENTA);
-
+                    getKey(0, "Purple Key!", index, Color.magenta);
                     break;
                 case "WhiteKey":
-                    keys[3]=true;
-                    gp.obj[index]=null;
-                    gp.ui.showMessage("White Key!", new Font("Arial",Font.BOLD,30),Color.white);
-                    break;
-                case "door":
-                    gp.obj[index]=null;
+                    getKey(0, "Wite Key!", index, Color.white);
                     break;
                 case "boostspeed":
-                    speed+=2;
-                    gp.obj[index]=null;
-                    gp.ui.showMessage("Boost Speed!", new Font("Arial",Font.BOLD,30),Color.orange);
+                    getKey(0, "Speed Boosted!", index, Color.orange);
                     break;
 
             }
         }
+    }
+
+    private void getKey(int keyID, String textToShow, int index, Color color){
+        keys[keyID]=true;
+        gp.obj[index]=null;
+        gp.ui.showMessage(textToShow, new Font("Arial",Font.BOLD,30), color);
     }
     /**
      @brief medoto draw()
