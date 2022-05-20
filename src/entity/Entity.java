@@ -21,12 +21,7 @@ public class Entity extends Thread{
     public Rectangle solidArea;
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
-    public int actionLockCounter = 0;
 
-    /*public boolean redKey=false;
-    public  boolean greenKey=false;
-    public boolean whiteKey=false;
-    public boolean purpleKey=false;*/
     public boolean[] keys = new boolean[4]; // 0-> red, 1-> green, 2-> white, 3-> purple
 
     public Entity(){
@@ -38,8 +33,7 @@ public class Entity extends Thread{
         for(int i = 0; i < keys.length; i++) {
             keys[i] = false;
         }
-    }
-
+    };
     public void update() {
 
 
@@ -47,10 +41,10 @@ public class Entity extends Thread{
         gp.collisionChecker.checkTile(this);
         gp.collisionChecker.checkObject(this, false);
         if(gp.collisionChecker.checkPlayer(this)){
-            gp.aSetter.stopNpc();
-            gp.aSetter.setNpc();
-            gp.player.setDefaultValues();
-            gp.aSetter.setBoots();
+                gp.aSetter.stopNpc();
+                gp.aSetter.setNpc();
+                gp.player.setDefaultValues();
+                gp.aSetter.setBoots();
         }
 
         if (!collisionOn) {

@@ -122,46 +122,9 @@ public class CollisionChecker {
                 }
             }
         }
-
-        /* if (tileNum1 == 61 || tileNum2 == 61) {
-            if (e.redKey) {
-                e.collisionOn = false;
-                gp.ui.showMessage("Open Door");
-                return true;
-            }
-        } else if (tileNum1 == 62 || tileNum2 == 62) {
-            if (e.greenKey) {
-                e.collisionOn = false;
-                gp.ui.showMessage("Open Door");
-                return true;
-
-            }
-        } else if (tileNum1 == 63 || tileNum2 == 63) {
-            if (e.purpleKey) {
-                e.collisionOn = false;
-                gp.ui.showMessage("Open Door");
-                return true;
-            }
-        } else if (tileNum1 == 64 || tileNum2 == 64) {
-            if (e.whiteKey) {
-                e.collisionOn = false;
-                gp.ui.showMessage("Open Door");
-                return true;
-            }
-        }*/
         return false;
     }
 
-    /*private boolean checkDoorTile(int tileNum1, int tileNum2, int dorTileID, Entity e){
-        for(int i =0; i < e.keys.length; i++) {
-            if((tileNum1 == dorTileID || tileNum2 == dorTileID) && e.keys[i]){
-                e.collisionOn = false;
-                gp.ui.showMessage("Open Door");
-                return true;
-            }
-        }
-        return false;
-    }*/
 
     /**
      *
