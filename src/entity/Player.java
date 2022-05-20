@@ -146,6 +146,7 @@ this.screenY=0;
                     getKey(0, "Wite Key!", index, Color.white);
                     break;
                 case "boostspeed":
+                    speed+=2;
                     getKey(0, "Speed Boosted!", index, Color.orange);
                     break;
 

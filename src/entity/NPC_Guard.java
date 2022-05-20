@@ -29,23 +29,33 @@ public class NPC_Guard extends Entity {
     @Override
     public void run() {
         while(true){
-            Random random = new Random();
-            int i = random.nextInt(100) + 1;
 
-            if (i <= 25) {
-                direction = "up";
-            } else if (i <= 50) {
-                direction = "down";
-            } else if (i <= 75) {
-                direction = "right";
-            } else {
-                direction = "left";
-            }
+
+            changedirection();
+
             try {
                 sleep(1000);
             } catch (InterruptedException e) {
 
             }
         }
+    }
+    public void changedirection(){
+        String newdirection="";
+        do{
+            Random random = new Random();
+            int i = random.nextInt(100) + 1;
+            if (i <= 25) {
+                newdirection = "up";
+            } else if (i <= 50) {
+                newdirection = "down";
+            } else if (i <= 75) {
+                newdirection = "right";
+            } else {
+                newdirection = "left";
+            }
+        }while(direction==newdirection);
+        direction=newdirection;
+
     }
 }
