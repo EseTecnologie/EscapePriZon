@@ -11,7 +11,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.Objects;
 
 /**
@@ -90,11 +89,10 @@ public class UI {
      *
      * @param text scritta da scrivere
      * @param c    colore da utilizzare per scrivere
-     * @param f    font da usare per scrivere
      * @brief metodo per riceve le informazioni da scrivere
      * @since 1.0
      */
-    public void showMessage(String text, Font f, Color c) {
+    public void showMessage(String text, Color c) {
         message = text;
         messageOn = true;
         this.c = c;
@@ -201,7 +199,7 @@ public class UI {
         BufferedImage background = null;
         try {
             background = ImageIO.read(new File("resources/map/escap_cover.jpg"));
-        } catch (IOException e) {
+        } catch (IOException ignored) {
 
         }
         g2.drawImage(background, 0, gp.tileSize * 2, gp.screenWidth, 600, null);
@@ -261,7 +259,6 @@ public class UI {
      */
     public int getXforCenterText(String text) {
         int lenght = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-        int x = gp.screenWidth / 2 - lenght / 2;
-        return x;
+        return gp.screenWidth / 2 - lenght / 2;
     }
 }

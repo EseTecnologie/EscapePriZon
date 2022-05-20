@@ -48,16 +48,6 @@ public class Player extends Entity {
     public final int screenY;
 
     /**
-     * @brief costruttore  del player
-     * @description metodo che inizializza la posizione a X=0 e Y=0
-     * @since 1.0
-     */
-    public Player() {
-        this.screenX = 0;
-        this.screenY = 0;
-    }
-
-    /**
      * metodo che inizializza la posizione dello screen e il retangolo nel quale sara presente il player
      * richiama i metodi setDefaultValues per assegnare la posizione del player nel world e il getPlayerImage per
      * assegnare le immagini al player
@@ -101,7 +91,6 @@ public class Player extends Entity {
     /**
      * metodo per assegnare le immagini per i movimenti al player passandogli il path della loro posizione
      *
-     * @throws IOException avviene se le immagini non vengono trovate e questo non fa crasciare il software
      * @brief getPlayerImage
      * @since 1.0
      */
@@ -158,23 +147,15 @@ public class Player extends Entity {
         if (index != 999) {
             String objetName = gp.obj[index].name;
             switch (objetName) {
-                case "redKey":
-                    getKey(0, "Red Key!", index, Color.red);
-                    break;
-                case "GreenKey":
-                    getKey(0, "Green Key!", index, Color.green);
-                    break;
-                case "PurpleKey":
-                    getKey(0, "Purple Key!", index, Color.magenta);
-                    break;
-                case "WhiteKey":
-                    getKey(0, "Wite Key!", index, Color.white);
-                    break;
-                case "boostspeed":
+                case "redKey" -> getKey(0, "Red Key!", index, Color.red);
+                case "GreenKey" -> getKey(1, "Green Key!", index, Color.green);
+                case "PurpleKey" -> getKey(2, "Purple Key!", index, Color.magenta);
+                case "WhiteKey" -> getKey(3, "Wite Key!", index, Color.white);
+                case "boostspeed" -> {
                     speed += 2;
-                    getKey(0, "Speed Boosted!", index, Color.orange);
-                    break;
-
+                    gp.obj[index] = null;
+                    gp.ui.showMessage("Speed Boosted!", Color.orange);
+                }
             }
         }
     }
@@ -191,7 +172,7 @@ public class Player extends Entity {
     private void getKey(int keyID, String textToShow, int index, Color color) {
         keys[keyID] = true;
         gp.obj[index] = null;
-        gp.ui.showMessage(textToShow, new Font("Arial", Font.BOLD, 30), color);
+        gp.ui.showMessage(textToShow, color);
     }
 
     /**
@@ -208,30 +189,30 @@ public class Player extends Entity {
         BufferedImage image = null;
 
         switch (direction) {
-            case "up":
+            case "up" -> {
                 if (spriteNum == 1)
                     image = up1;
                 if (spriteNum == 2)
                     image = up2;
-                break;
-            case "down":
+            }
+            case "down" -> {
                 if (spriteNum == 1)
                     image = down1;
                 if (spriteNum == 2)
                     image = down2;
-                break;
-            case "left":
+            }
+            case "left" -> {
                 if (spriteNum == 1)
                     image = left1;
                 if (spriteNum == 2)
                     image = left2;
-                break;
-            case "right":
+            }
+            case "right" -> {
                 if (spriteNum == 1)
                     image = right1;
                 if (spriteNum == 2)
                     image = right2;
-                break;
+            }
         }
         g.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
     }

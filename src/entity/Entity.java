@@ -8,12 +8,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * @author Sottocasa Michele
  * @version 1.0
  * @class Entity
- * @brief Creazione delle principali variabili e metodi per lagestione di una singola entità
+ * @brief Creazione delle principali variabili e metodi per la gestione di una singola entità
  */
 public class Entity extends Thread {
     public GamePanel gp;
@@ -42,9 +43,7 @@ public class Entity extends Thread {
     public Entity(GamePanel gp) {
         this.gp = gp;
         solidArea = new Rectangle(0, 0, gp.tileSize, gp.tileSize);
-        for (int i = 0; i < keys.length; i++) {
-            keys[i] = false;
-        }
+        Arrays.fill(keys, false);
     }
 
     /**
@@ -94,7 +93,7 @@ public class Entity extends Thread {
      */
     public BufferedImage loadImage(String imagePath) {
         UtilityTool uTool = new UtilityTool();
-        BufferedImage image = null;
+        BufferedImage image;
         try {
             image = ImageIO.read(new File(imagePath + ".png"));
             image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
@@ -122,30 +121,30 @@ public class Entity extends Thread {
                 worldY - gp.tileSize < (gp.player.worldY + gp.player.screenY)) {
 
             switch (direction) {
-                case "up":
+                case "up" -> {
                     if (spriteNum == 1)
                         image = up1;
                     if (spriteNum == 2)
                         image = up2;
-                    break;
-                case "down":
+                }
+                case "down" -> {
                     if (spriteNum == 1)
                         image = down1;
                     if (spriteNum == 2)
                         image = down2;
-                    break;
-                case "left":
+                }
+                case "left" -> {
                     if (spriteNum == 1)
                         image = left1;
                     if (spriteNum == 2)
                         image = left2;
-                    break;
-                case "right":
+                }
+                case "right" -> {
                     if (spriteNum == 1)
                         image = right1;
                     if (spriteNum == 2)
                         image = right2;
-                    break;
+                }
             }
 
             g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);

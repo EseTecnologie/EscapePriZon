@@ -49,39 +49,39 @@ public class NPC_Guard extends Entity {
     @Override
     public void run() {
         while (true) {
-            changedirection();
+            changeDirection();
             try {
                 sleep(1000);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                //throw new RuntimeException(e);
             }
         }
     }
 
     /**
-     * viene generato un numero casuale compreso tra 1 e 100, per aumentare la probabilità di avere un numero
+     * Viene generato un numero casuale compreso tra 1 e 100, per aumentare la probabilità di avere un numero
      * differente. Nel caso in cui la posizione generata sia identica a quella precedente, si ripete la generazione. Viene
      * poi cambiato il valore della variabile 'direction' con la nuova direzione dell'NPC
      *
      * @brief selezione randomica della prossima mossa
      * @since 1.0
      */
-    public void changedirection() {
-        String newdirection = "";
+    public void changeDirection() {
+        String newDirection;
         do {
             Random random = new Random();
             int i = random.nextInt(100) + 1;
             if (i <= 25) {
-                newdirection = "up";
+                newDirection = "up";
             } else if (i <= 50) {
-                newdirection = "down";
+                newDirection = "down";
             } else if (i <= 75) {
-                newdirection = "right";
+                newDirection = "right";
             } else {
-                newdirection = "left";
+                newDirection = "left";
             }
-        } while (direction.equals(newdirection));
-        direction = newdirection;
+        } while (direction.equals(newDirection));
+        direction = newDirection;
 
     }
 }
