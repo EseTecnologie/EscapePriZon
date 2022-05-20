@@ -6,7 +6,7 @@ The player will play the role of a prisoner trying to escape from the prison by 
 
 Colombo: Controlli player(movimenti, collisioni con oggetti/muri), gestione apertura porte e chiavi, start pase, finish page, pause page
 
-Sottocasa: Creazione mappe, gestione npc Guardie (atteramento, inventario, "ritorno in vita"),inventario player, npc detenuti
+Sottocasa: Creazione mappe, gestione npc Guardie, controllo generale documentazione
 
 ## Resources
 
