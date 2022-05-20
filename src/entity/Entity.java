@@ -10,11 +10,12 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @class Entity
  * @author Sottocasa Michele
- * Gestione delle enti
+ * @version 1.0
+ * @class Entity
+ * @brief Creazione delle principali variabili e metodi per lagestione di una singola entità
  */
-public class Entity extends Thread{
+public class Entity extends Thread {
     public GamePanel gp;
     public int worldX, worldY;
     public int speed;
@@ -29,24 +30,26 @@ public class Entity extends Thread{
 
     public boolean[] keys = new boolean[4]; // 0-> red, 1-> green, 2-> white, 3-> purple
 
-    public Entity(){
+    public Entity() {
 
     }
 
     /**
-     * Costruttore parametrico
      * @param gp Variabile contenente il {@link GamePanel} corrente, sul quale viene visualizzato il gioco
+     * @brief Costruttore parametrico
+     * @since 1.0
      */
     public Entity(GamePanel gp) {
         this.gp = gp;
         solidArea = new Rectangle(0, 0, gp.tileSize, gp.tileSize);
-        for(int i = 0; i < keys.length; i++) {
+        for (int i = 0; i < keys.length; i++) {
             keys[i] = false;
         }
-    };
+    }
 
     /**
-     *
+     * @brief Aggiornamento delle principali logiche di gioco
+     * @since 1.0
      */
     public void update() {
 
@@ -54,11 +57,11 @@ public class Entity extends Thread{
         collisionOn = false;
         gp.collisionChecker.checkTile(this);
         gp.collisionChecker.checkObject(this, false);
-        if(gp.collisionChecker.checkPlayer(this)){
-                gp.aSetter.stopNpc();
-                gp.aSetter.setNpc();
-                gp.player.setDefaultValues();
-                gp.aSetter.setBoots();
+        if (gp.collisionChecker.checkPlayer(this)) {
+            gp.aSetter.stopNpc();
+            gp.aSetter.setNpc();
+            gp.player.setDefaultValues();
+            gp.aSetter.setBoots();
         }
 
         if (!collisionOn) {
@@ -81,7 +84,15 @@ public class Entity extends Thread{
         }
     }
 
-    public BufferedImage setup(String imagePath) {
+    /**
+     * @param imagePath path dell'immagine da ridimensionare, esclusa l'estensione
+     * @return l'{@link BufferedImage immagine} ridimensionata
+     * @description Creazione di un file, contenente l'immagine importata. Si procede poi tramite la classe {@link UtilityTool} a
+     * ridimensionare l'immagine, per ingrandirla, in modo da renderla visibile più semplicemente
+     * @brief Importazione e ridimensionamento dell'immagine
+     * @since 1.0
+     */
+    public BufferedImage loadImage(String imagePath) {
         UtilityTool uTool = new UtilityTool();
         BufferedImage image = null;
         try {
@@ -93,6 +104,10 @@ public class Entity extends Thread{
         return image;
     }
 
+    /**
+     * @param g2 {@link Graphics2D pannello}
+     * @since 1.0
+     */
     public void draw(Graphics2D g2) {
 
         BufferedImage image = null;

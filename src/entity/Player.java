@@ -15,21 +15,42 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ * @author Colombo Federico
+ * @version 1.0
+ * @class Player
+ * @brief Gestione dei movimenti del player
+ */
 public class Player extends Entity {
-    /** GamePanel per aggiornare le informazioni del player */
+    /**
+     * GamePanel per aggiornare le informazioni del player
+     *
+     * @since 1.0
+     */
     GamePanel gp;
-    /** KeyHandler per effettuare i movimenti del player */
+    /**
+     * KeyHandler per effettuare i movimenti del player
+     *
+     * @since 1.0
+     */
     KeyHandler keyH;
-    /** attributo per dichiarare la posizione sulla corditata X */
+    /**
+     * attributo per dichiarare la posizione sulla corditata X
+     *
+     * @since 1.0
+     */
     public final int screenX;
-    /** attributo per dichiarare la posizione sulla corditata Y */
+    /**
+     * attributo per dichiarare la posizione sulla corditata Y
+     *
+     * @since 1.0
+     */
     public final int screenY;
 
     /**
-     @brief costruttore  del player
-
-     metodo che inizializza la posizione a X=0 e Y=0
+     * @brief costruttore  del player
+     * @description metodo che inizializza la posizione a X=0 e Y=0
+     * @since 1.0
      */
     public Player() {
         this.screenX = 0;
@@ -37,13 +58,13 @@ public class Player extends Entity {
     }
 
     /**
-     @brief costruttore parametrico del player
-
-     metodo che inizializza la posizione dello screen e il retangolo nel quale sara presente il player
-     richiama i metodi setDefaultValues per assegnare la posizione del player nel world e il getPlayerImage per
-     assegnare le immagini al player
-     @param  gp GamePanel sul quale viene caricato il player
-     @param  keyH KeyHandler per utilizzare il keylistener
+     * @param gp   GamePanel sul quale viene caricato il player
+     * @param keyH KeyHandler per utilizzare il keylistener
+     * @brief costruttore parametrico del player
+     * @description metodo che inizializza la posizione dello screen e il retangolo nel quale sara presente il player
+     * richiama i metodi setDefaultValues per assegnare la posizione del player nel world e il getPlayerImage per
+     * assegnare le immagini al player
+     * @since 1.0
      */
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -61,13 +82,12 @@ public class Player extends Entity {
     }
 
     /**
-     @brief metodo setDefaultValues
-
-     metodo per inizializzare i valori di default del player
-     le cordinate X e Y
-     la velocità
-     la direzione di partenza
-
+     * @brief metodo setDefaultValues
+     * @description metodo per inizializzare i valori di default del player
+     * le cordinate X e Y
+     * la velocità
+     * la direzione di partenza
+     * @since 1.0
      */
     public void setDefaultValues() {
         worldX = gp.tileSize * 68;
@@ -77,12 +97,10 @@ public class Player extends Entity {
     }
 
     /**
-     @brief getPlayerImage
-
-     metodo per assegnare le immagini per i movimenti al player passandogli il path della loro posizione
-
-     @throws IOException avviene se le immagini non vengono trovate e questo non fa crasciare il software
-
+     * @throws IOException avviene se le immagini non vengono trovate e questo non fa crasciare il software
+     * @brief getPlayerImage
+     * @description metodo per assegnare le immagini per i movimenti al player passandogli il path della loro posizione
+     * @since 1.0
      */
 
     public void getPlayerImage() {
@@ -101,11 +119,10 @@ public class Player extends Entity {
     }
 
     /**
-     @brief medoto update()
-
-     metodo che controlla se vengono premuti i tasti sulla tastiera se i tasti sono
-     stati premuti richiama il metodo simulateWalking() per aggiornare la posizione del
-     player
+     * @brief medoto update()
+     * @description metodo che controlla se vengono premuti i tasti sulla tastiera se i tasti sono
+     * stati premuti richiama il metodo simulateWalking() per aggiornare la posizione del player
+     * @since 1.0
      */
 
 
@@ -126,12 +143,11 @@ public class Player extends Entity {
     }
 
     /**
-     @brief metodo pickUpOnject
-
-     metodo per raccogliere gli oggetti che si trovano nella mappa contorllando
-     index che viene passato come parametro dal CollisionChecker
-
-     @param  index parametro per controllare i diversi tipi di oggetti che vengono trovati
+     * @param index parametro per controllare i diversi tipi di oggetti che vengono trovati
+     * @brief metodo pickUpOnject
+     * @description metodo per raccogliere gli oggetti che si trovano nella mappa contorllando
+     * index che viene passato come parametro dal CollisionChecker
+     * @since 1.0
      */
     public void pickUpOnject(int index) {
         if (index != 999) {
@@ -158,6 +174,15 @@ public class Player extends Entity {
         }
     }
 
+    /**
+     * @param keyID l'ID della chiave ottenuta
+     * @param textToShow il testo da visualizzare a schermo
+     * @param index l'indice dell'oggetto
+     * @param color il colore del testo da visualizzare a schermo
+     * @brief viene segnato nell'array delle chiavi, quale chiave è stata presa e viene rimossa la visualizzazione della
+     * chiave ottenuta
+     * @since 1.0
+     */
     private void getKey(int keyID, String textToShow, int index, Color color) {
         keys[keyID] = true;
         gp.obj[index] = null;
@@ -165,13 +190,12 @@ public class Player extends Entity {
     }
 
     /**
-     @brief medoto draw()
-
-     metodo per lo scambio delle immagini del player a seconda
-     della della direzione in cui deve andare e disegna l'immagine del player sul
-     gamePanel
-
-     @param g parametro contenente il pannello grafico sul quale verrà dedisegnato il player
+     * @param g parametro contenente il pannello grafico sul quale verrà dedisegnato il player
+     * @brief medoto draw()
+     * @description metodo per lo scambio delle immagini del player a seconda
+     * della della direzione in cui deve andare e disegna l'immagine del player sul
+     * gamePanel
+     * @since 1.0
      */
 
     public void draw(Graphics2D g) {
@@ -207,10 +231,10 @@ public class Player extends Entity {
     }
 
     /**
-     @brief medoto simulateWalking()
-
-     metodo che chiama il metodo checkTile per controllare la collisione con le tile
-     e somma la velocità alla cordinate X e Y per permettere il movimento del player
+     * @brief medoto simulateWalking()
+     * @description metodo che chiama il metodo checkTile per controllare la collisione con le tile
+     * e somma la velocità alla cordinate X e Y per permettere il movimento del player
+     * @since 1.0
      */
     private void simulateWalking() {
         spriteCounter++;

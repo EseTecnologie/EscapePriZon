@@ -16,6 +16,7 @@ public class Main {
      metodo main per mette la creazione degli oggetti con l'inizializzazione del Frame e del GamePanel, settare il Title del Frame
      e codice per stoppare tutti i Thread in funzione quando verrà chiuso il Frame
      @param  args contiene gli argomenti della riga di comando forniti come una matrice di oggetti
+      * @since 1.0
 
      */
     public static void main(String[] args){
