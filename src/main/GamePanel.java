@@ -9,68 +9,80 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * Creazione e gestione della finestra di gioco
+ *
  * @author Colombo Federico, Sottocasa Michele
  * @version 1.0
  * @brief Estensione della classe {@link JPanel}
- * @description Creazione e gestione della finestra di gioco
  */
 public class GamePanel extends JPanel implements Runnable {
 
     /**
-     *  Dimensione in pixel dei tile
+     * Dimensione in pixel dei tile
+     *
      * @since 1.0
      */
     public final int originalTitleSize = 16; //16x16 pixel images
     /**
-     *  Moltiplicatore di dimensione del tile
+     * Moltiplicatore di dimensione del tile
+     *
      * @since 1.0
      */
     final int scale = 3;
     /**
-     *  Dimensione finale in pixel del tile dopo la scalatura
+     * Dimensione finale in pixel del tile dopo la scalatura
+     *
      * @since 1.0
      */
     public final int tileSize = originalTitleSize * scale;//48*48 (più visibile in schermi con alta risoluzione)
     /**
-     *  Dimensione delle colonne visibili nello schermo
+     * Dimensione delle colonne visibili nello schermo
+     *
      * @since 1.0
      */
     public final int maxScreenCol = 20;
     /**
-     *  Dimensione delle righe visibili nello schermo
+     * Dimensione delle righe visibili nello schermo
+     *
      * @since 1.0
      */
     public final int maxScreenRow = 16;
 
     /**
-     *  Larghezza in pixle della finestra, calcolata sulla dimensione dei tile
+     * Larghezza in pixle della finestra, calcolata sulla dimensione dei tile
+     *
      * @since 1.0
      */
     public final int screenWidth = tileSize * maxScreenCol;
     /**
-     *  Altezza in pixle delal finestra, calcolata sulal dimensione dei tile
+     * Altezza in pixle delal finestra, calcolata sulal dimensione dei tile
+     *
      * @since 1.0
      */
     public final int screenHeight = tileSize * maxScreenRow;
 
     //World settings
     /**
-     *  Totale colonne del mondo
+     * Totale colonne del mondo
+     *
      * @since 1.0
      */
     public final int maxWorldCol = 92;
     /**
-     *  Totale righe del mondo
+     * Totale righe del mondo
+     *
      * @since 1.0
      */
     public final int maxWorldRow = 93;
     /**
-     *  Larghezza in pixel del mondo
+     * Larghezza in pixel del mondo
+     *
      * @since 1.0
      */
     public final int worldWith = tileSize * maxWorldCol;
     /**
-     *  Altezza in pixel del modno
+     * Altezza in pixel del modno
+     *
      * @since 1.0
      */
     public final int worldHeight = tileSize * maxWorldRow;
@@ -78,28 +90,33 @@ public class GamePanel extends JPanel implements Runnable {
 
     final int FPS = 60;
     /**
-     *  Istanza della classe {@link TileManager} per la gestione dei tile e la relativa visualizzazione
+     * Istanza della classe {@link TileManager} per la gestione dei tile e la relativa visualizzazione
+     *
      * @since 1.0
      */
     TileManager tileM = new TileManager(this);
     /**
-     *  Istanza della classe {@link KeyHandler} per la gestione dell'input del giocatore
+     * Istanza della classe {@link KeyHandler} per la gestione dell'input del giocatore
+     *
      * @since 1.0
      */
     KeyHandler keyH = new KeyHandler(this);
     /**
-     *  Istanza della classe {@link Player} per la gestione del player, viene passata come parametro
+     * Istanza della classe {@link Player} per la gestione del player, viene passata come parametro
      * l'istanza della classe {@link KeyHandler}
+     *
      * @since 1.0
      */
     public Player player = new Player(this, keyH);
     /**
-     *  Thread per la gestione della finestra di gioco
+     * Thread per la gestione della finestra di gioco
+     *
      * @since 1.0
      */
     Thread gameThread;
     /**
-     *  Istanza della classe {@link CollisionChecker} per la gestione delle collisioni con gli elementi
+     * Istanza della classe {@link CollisionChecker} per la gestione delle collisioni con gli elementi
+     *
      * @since 1.0
      */
     public CollisionChecker collisionChecker = new CollisionChecker(this);
@@ -108,7 +125,7 @@ public class GamePanel extends JPanel implements Runnable {
     public SuperObject obj[] = new SuperObject[40];
 
     /**
-     * @brief Creazione di un array di identità
+     * @brief Creazione di un array di NPC
      * @since 1.0
      */
     public Entity npc[] = new Entity[40];
@@ -146,8 +163,9 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     /**
-     * @description Override del metodo run del thread gameThread {@code <br>}
+     * Override del metodo run del thread gameThread {@code <br>}
      * Gestione della frequenza di aggiornamento delle immagini nella finestra
+     *
      * @since 1.0
      */
     @Override

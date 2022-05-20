@@ -15,7 +15,8 @@ import java.io.*;
  *
  * @author Sottocasa Michele
  * @version 1.0
- * @since 02/05/2022
+ * @class TileManager
+ * @brief Caricamento e gestione di Tiles e Mappa
  */
 public class TileManager {
 

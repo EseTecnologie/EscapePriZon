@@ -11,11 +11,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
+ * questa classe controlla gli eventi keyPressed e keyReleased per gestire i comandi per il movimento del player
+ *
  * @author Colombo Federico
  * @version 1.0
  * @class KeyHandler
  * @brief classe per la gestione del KeyListener
- * @description questa classe controlla gli eventi keyPressed e keyReleased per gestire i comandi per il movimento del player
  */
 public class KeyHandler implements KeyListener {
 
@@ -35,11 +36,12 @@ public class KeyHandler implements KeyListener {
     }
 
     /**
-     * @param e parametro con tutte le informazioni del tasto che viene cliccato
-     * @brief metodo keyPressed che gestisce il click del tasto della tastiera
-     * @description questo metodo serve per gestire il click su tastiera, assegna a true l'attributo corrispondente al tasto che viene schiacciato
+     * questo metodo serve per gestire il click su tastiera, assegna a true l'attributo corrispondente al tasto che viene schiacciato
      * controllando se il tasto cliccato è uno di quelli che servono al programma
      * a seconda dello stato del gioco i tasti servono per effettuare diverse opzioni
+     *
+     * @param e parametro con tutte le informazioni del tasto che viene cliccato
+     * @brief metodo keyPressed che gestisce il click del tasto della tastiera
      * @since 1.0
      */
     @Override
@@ -100,10 +102,11 @@ public class KeyHandler implements KeyListener {
     }
 
     /**
+     * questo metodo serve per gestire il rilascio del tasto della tastiera, assegna a false l'attributo corrispondente al tasto che viene rilasciato
+     * controllando se il tasto rilasciato è uno di quelli che servono al programma
+     *
      * @param e parametro con tutte le informazioni del tasto che viene cliccato
      * @brief metodo keyReleased che gestisce il rilascio del tasto della tastiera
-     * @description questo metodo serve per gestire il rilascio del tasto della tastiera, assegna a false l'attributo corrispondente al tasto che viene rilasciato
-     * controllando se il tasto rilasciato è uno di quelli che servono al programma
      * @since 1.0
      */
     @Override

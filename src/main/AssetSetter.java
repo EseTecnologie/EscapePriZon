@@ -19,9 +19,10 @@ public class AssetSetter {
     GamePanel gp;
 
     /**
+     * metodo per assegnare alla classe il componente gamepannel
+     *
      * @param gp GamePanel sul quale vengono caricati gli oggetti
      * @brief costruttore parametrico
-     * @description metodo per assegnare alla classe il componente gamepannel
      * @since 1.0
      */
     public AssetSetter(GamePanel gp) {
@@ -29,8 +30,9 @@ public class AssetSetter {
     }
 
     /**
+     * metodo per inizializzare i diversi tipi di chiavi e le varie posizioni
+     *
      * @brief setKey metodo per settare le chiavi
-     * @description metodo per inizializzare i diversi tipi di chiavi e le varie posizioni
      * @since 1.0
      */
     public void setKey() {
@@ -50,8 +52,9 @@ public class AssetSetter {
     }
 
     /**
+     * metodo per inizializzare la scarpa per l'aumento di velcità
+     *
      * @brief setBoots metodo per settare le scarpe
-     * @description metodo per inizializzare la scarpa per l'aumento di velcità
      * @since 1.0
      */
     public void setBoots() {
@@ -62,18 +65,21 @@ public class AssetSetter {
 
     /**
      * Array con le coordinate x di tutti gli NPC
+     *
      * @since 1.0
      */
     int[] x = {68, 45, 58, 49, 68, 58, 49, 68, 79, 79, 79, 33, 22, 28, 58, 35, 28, 9, 14, 8, 30, 40, 70, 20, 3, 15, 33, 86, 86, 84, 81, 63, 52, 36, 18, 5, 17, 25, 14};
     /**
      * Array con le coordinate Y di tutti gli NPC
+     *
      * @since 1.0
      */
     int[] y = {29, 29, 36, 44, 44, 52, 59, 59, 51, 37, 23, 34, 34, 45, 70, 67, 56, 56, 48, 32, 22, 14, 12, 24, 30, 8, 7, 12, 36, 67, 80, 85, 79, 74, 80, 83, 72, 66, 63};
 
     /**
+     * metodo per inizializzare gli Npc e la loro pozione
+     *
      * @brief setNpc metodo per settare le gli NPC
-     * @description metodo per inizializzare gli Npc e la loro pozione
      * @since 1.0
      */
     public void setNpc() {
@@ -86,8 +92,9 @@ public class AssetSetter {
     }
 
     /**
+     * metodo per stoppare e cancellare tutti gli NPC
+     *
      * @brief spotNpc()
-     * @description metodo per stoppare e cancellare tutti gli NPC
      * @since 1.0
      */
     public void stopNpc() {

@@ -15,10 +15,9 @@ public class UtilityTool {
     }
 
     /**
-     *
      * @param original {@link BufferedImage} a dimensioni originali
-     * @param width {@link Integer} larghezza dell'immagine
-     * @param height {@link Integer} altezza dell'immagine
+     * @param width    {@link Integer} larghezza dell'immagine
+     * @param height   {@link Integer} altezza dell'immagine
      * @return {@link BufferedImage} immagine ingrandita
      * @since 1.0
      */

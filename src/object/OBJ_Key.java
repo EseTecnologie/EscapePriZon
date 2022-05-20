@@ -12,13 +12,18 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Colombo Federico
+ * @version 1.0
+ * @class OBJ_Key
+ * @brief estione dell'oggetto chiave, per l'apertura delle porte
+ */
 public class OBJ_Key extends SuperObject {
     /**
-     *@brief  costruttore parametrico OBJ_Key()
-     *
      * metodo per la gestione delle chiavi
-     *
+     *@brief  costruttore parametrico OBJ_Key()
      * @param type riceve come parametro il tipo delle chiave
+     * @since 1.0
      */
     public OBJ_Key(String type){
 

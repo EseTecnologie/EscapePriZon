@@ -85,10 +85,10 @@ public class Entity extends Thread {
     }
 
     /**
+     * Creazione di un file, contenente l'immagine importata. Si procede poi tramite la classe {@link UtilityTool} a
+     * ridimensionare l'immagine, per ingrandirla, in modo da renderla visibile più SEMPLICEMENTE
      * @param imagePath path dell'immagine da ridimensionare, esclusa l'estensione
      * @return l'{@link BufferedImage immagine} ridimensionata
-     * @description Creazione di un file, contenente l'immagine importata. Si procede poi tramite la classe {@link UtilityTool} a
-     * ridimensionare l'immagine, per ingrandirla, in modo da renderla visibile più semplicemente
      * @brief Importazione e ridimensionamento dell'immagine
      * @since 1.0
      */
@@ -105,7 +105,8 @@ public class Entity extends Thread {
     }
 
     /**
-     * @param g2 {@link Graphics2D pannello}
+     * @param g2 {@link Graphics2D pannello} su cui viene visualizzato il gioco
+     * @brief visualizzazione a schermo del mondo e delle varie entità
      * @since 1.0
      */
     public void draw(Graphics2D g2) {

@@ -14,6 +14,13 @@ import java.io.IOException;
 import java.nio.Buffer;
 import java.util.Objects;
 
+/**
+ * @author Colombo Federico
+ * @version 1.0
+ * @class UI
+ * @brief Gestione e visualizzazione a schermo di messaggi di testo
+ */
+
 public class UI {
     /**
      * game panel per avere le informazioni di tutti i componenti
@@ -23,45 +30,53 @@ public class UI {
     GamePanel gp;
     /**
      * Graphics2D per disegnare
+     *
      * @since 1.0
      */
     Graphics2D g2;
     /**
      * font standard
+     *
      * @since 1.0
      */
     Font arial_40, arial_80;
     /**
      * variabile di controllo per controllare se c'è qualcosa da scrivere
+     *
      * @since 1.0
      */
     public boolean messageOn = false;
     /**
      * string contenente i messaggi da visualizzare
+     *
      * @since 1.0
      */
     public String message = " ";
     /**
      * variabile per il conteggio dei secondi nel quale rimane a vista la scritta
+     *
      * @since 1.0
      */
     int messageCounter = 0;
     Color c;
     /**
      * variabile per il controllo se si ha finito il gioco
+     *
      * @since 1.0
      */
     public boolean finish = false;
     /**
      * variabile per il controllo del click su e giù nella pagina di inizio
+     *
      * @since 1.0
      */
     public int commandNum = 0;
 
     /**
+     * metodo imposta il gamePanel e i due font di default
+     *
      * @param gp gamePannel contenente tutte le informazioni del gioco
      * @brief costruttore parametrico UI
-     * @description metodo imposta il gamePanel e i due font di default
      * @since 1.0
      */
     public UI(GamePanel gp) {
@@ -71,11 +86,12 @@ public class UI {
     }
 
     /**
+     * metodo che riceve come parametro le informazioni che verranò scritte
+     *
      * @param text scritta da scrivere
      * @param c    colore da utilizzare per scrivere
      * @param f    font da usare per scrivere
      * @brief metodo per riceve le informazioni da scrivere
-     * @description metodo che riceve come parametro le informazioni che verranò scritte
      * @since 1.0
      */
     public void showMessage(String text, Font f, Color c) {
@@ -85,9 +101,10 @@ public class UI {
     }
 
     /**
+     * metodo che riceve come parametro le informazioni che verranò scritte
+     *
      * @param text scritta da scrivere
      * @brief metodo per riceve le informazioni da scrivere
-     * @description metodo che riceve come parametro le informazioni che verranò scritte
      * @since 1.0
      */
     public void showMessage(String text) {
@@ -103,9 +120,10 @@ public class UI {
     }
 
     /**
+     * metodo che controlla lo stato del gioco tramite il gamePanel e richiama i metodi che scrivono sul gamePannel
+     *
      * @param g2 pannello grafico dove si disegna e scrive
      * @brief metodo draw
-     * @description metodo che controlla lo stato del gioco tramite il gamePanel e richiama i metodi che scrivono sul gamePannel
      * @since 1.0
      */
     public void draw(Graphics2D g2) {
@@ -126,9 +144,10 @@ public class UI {
     }
 
     /**
-     * @brief metodo drawPlayState
-     * @description metodo scrive la le scritte finali quando si esce dalla prigione
+     * metodo scrive la le scritte finali quando si esce dalla prigione
      * e scrive tutte le scritte notifica che escono sul pannello
+     *
+     * @brief metodo drawPlayState
      * @since 1.0
      */
     public void drawPlayState() {
@@ -170,11 +189,12 @@ public class UI {
     }
 
     /**
-     * @brief metodo drawTitleScreen
-     * @description metodo per la visualizzazione della pagina iniziale
+     * metodo per la visualizzazione della pagina iniziale
      * comprendentr il titolo
      * il menu con il testo per far partire la partita e il tasto per chiudere il gioco
      * il drawImage per la visualizzazione dell'immagine di sfondo
+     *
+     * @brief metodo drawTitleScreen
      * @since 1.0
      */
     public void drawTitleScreen() {
@@ -217,8 +237,9 @@ public class UI {
     }
 
     /**
+     * metodo che scrive sul pannello la scritta PAUSED quando il gioco viene messo in pausa schiacciando il testo P
+     *
      * @brief metodo drawPauseScreen
-     * @description metodo che scrive sul pannello la scritta PAUSED quando il gioco viene messo in pausa schiacciando il testo P
      * @since 1.0
      */
 
@@ -232,8 +253,10 @@ public class UI {
     }
 
     /**
+     * metodo per centrale il testo al centro della pagina
+     *
+     * @return centro dell'asse X per centrare il testo
      * @brief metodo getXforCenterText
-     * @description metodo per centrale il testo al centro della pagina
      * @since 1.0
      */
     public int getXforCenterText(String text) {

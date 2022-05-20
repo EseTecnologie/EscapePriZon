@@ -41,8 +41,9 @@ public class NPC_Guard extends Entity {
     }
 
     /**
+     * viene creato un loop infinito, nel quale ogni secondo gli NPC cambiano direzione randomicamente
+     *
      * @brief override del metodo run
-     * @description viene creato un loop infinito, nel quale ogni secondo gli NPC cambiano direzione randomicamente
      * @since 1.0
      */
     @Override
@@ -58,10 +59,11 @@ public class NPC_Guard extends Entity {
     }
 
     /**
-     * @brief selezione randomica della prossima mossa
-     * @description viene generato un numero casuale compreso tra 1 e 100, per aumentare la probabilità di avere un numero
+     * viene generato un numero casuale compreso tra 1 e 100, per aumentare la probabilità di avere un numero
      * differente. Nel caso in cui la posizione generata sia identica a quella precedente, si ripete la generazione. Viene
      * poi cambiato il valore della variabile 'direction' con la nuova direzione dell'NPC
+     *
+     * @brief selezione randomica della prossima mossa
      * @since 1.0
      */
     public void changedirection() {

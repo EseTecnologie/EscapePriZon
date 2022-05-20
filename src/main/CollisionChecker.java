@@ -10,10 +10,11 @@ import entity.Entity;
 import entity.Player;
 
 /**
+ * gestione delle collisioni. Viene creato un rettangolo sopra il {@link Player}
+ * con il quale verranno controllate le collisioni con le Tile
+ *
  * @author Colombo Federico
  * @version 1.0
- * @description gestione delle collisioni. Viene creato un rettangolo sopra il {@link Player}
- * con il quale verranno controllate le collisioni con le Tile
  * @class CollisionChecker
  * @brief gestione delle collisioni di {@link Player} e {@link entity.NPC_Guard} con gli oggetti
  */
@@ -27,8 +28,9 @@ public class CollisionChecker {
     GamePanel gp;
 
     /**
+     * riceve come parametro il {@link GamePanel} e lo copia nell'attributo locale
+     *
      * @param gp passaggio del {@link GamePanel} quando viene inizializzato l'oggetto
-     * @description riceve come parametro il {@link GamePanel} e lo copia nell'attributo locale
      * @brief costruttore con passaggio di parametri
      * @since 1.0
      */
@@ -37,11 +39,12 @@ public class CollisionChecker {
     }
 
     /**
-     * @param entity riceve come parametro l'{@link Entity entità} corrente
-     * @description crea intorno all'entità un quadrato per controllare la collisione con la tile
+     * crea intorno all'entità un quadrato per controllare la collisione con la tile
      * utilizzando l'attributo direction dell'{@link Entity entità} controlla a seconda della direzione
      * se va in contatto con una tile con la quale può passargli sopra o con la quale si deve bloccare
      * controllo per le chiavi con apertura porte
+     *
+     * @param entity riceve come parametro l'{@link Entity entità} corrente
      * @brief metodo per il controllo delle collisioni con i {@link tile.Tile tiles}
      * @since 1.0
      */
@@ -114,16 +117,17 @@ public class CollisionChecker {
     }
 
     /**
+     * Si controlla se il player è già in possesso della chiave necessaria per aprire la porta corrente
+     * Tramite un ciclo for si scorrono tutti gli ID dei {@link tile.Tile tiles} delle porte. Tramite un for annidato, si scorre
+     * l'array contente delle chiavi. Nel caso in cui l'ID della porta sia corretto, e si è in possesso della sua relativa
+     * chiave: si rimuove la collisione con la porta, si visualizza a schermo un messaggio indicante l'apertura della pora
+     * e si ritorna true
+     *
      * @param tileNum1 prima coordinata del tile successivo
      * @param tileNum2 seconda coordinata del tile successivo
      * @param e        {@link Entity entità} corrente
      * @return true se è possibile aprire la porta, altrimenti false (sia se non si ha la chiave, sia se non esiste nessuna
      * porta)
-     * @description Si controlla se il player è già in possesso della chiave necessaria per aprire la porta corrente
-     * Tramite un ciclo for si scorrono tutti gli ID dei {@link tile.Tile tiles} delle porte. Tramite un for annidato, si scorre
-     * l'array contente delle chiavi. Nel caso in cui l'ID della porta sia corretto, e si è in possesso della sua relativa
-     * chiave: si rimuove la collisione con la porta, si visualizza a schermo un messaggio indicante l'apertura della pora
-     * e si ritorna true
      * @brief controlla la possibilità di aprire una porta
      * @since 1.0
      */
@@ -144,11 +148,12 @@ public class CollisionChecker {
 
 
     /**
-     * @param entity riceve come parametro l'{@link Entity entità} corrente
-     * @return indice dell'oggetto, nel caso in cui non vi sia nessun oggetto, si ritorna 999
-     * @description crea intorno all'entità un quadrato per controllare la collisione con un {@link Object oggetto}
+     * crea intorno all'entità un quadrato per controllare la collisione con un {@link Object oggetto}
      * utilizzando l'attributo direction dell'{@link Entity entità} controlla a seconda della direzione
      * se va in contatto con un {@link Object oggetto}
+     *
+     * @param entity riceve come parametro l'{@link Entity entità} corrente
+     * @return indice dell'oggetto, nel caso in cui non vi sia nessun oggetto, si ritorna 999
      * @brief metodo per il controllo delle collisioni con gli oggetti
      * @since 1.0
      */
@@ -220,11 +225,12 @@ public class CollisionChecker {
     }
 
     /**
-     * @param entity riceve come parametro l'{@link Entity entità} corrente
-     * @return viene ritornato true nel caso in cui si è in collisione con un player, altrimenti false
-     * @description crea intorno all'entità un quadrato per controllare la collisione con il player
+     * crea intorno all'entità un quadrato per controllare la collisione con il player
      * utilizzando l'attributo direction dell'{@link Entity entità} controlla a seconda della direzione
      * se va in contatto con una player
+     *
+     * @param entity riceve come parametro l'{@link Entity entità} corrente
+     * @return viene ritornato true nel caso in cui si è in collisione con un player, altrimenti false
      * @brief metodo per il controllo delle collisioni con il player
      * @since 1.0
      */

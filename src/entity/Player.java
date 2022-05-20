@@ -58,12 +58,13 @@ public class Player extends Entity {
     }
 
     /**
+     * metodo che inizializza la posizione dello screen e il retangolo nel quale sara presente il player
+     * richiama i metodi setDefaultValues per assegnare la posizione del player nel world e il getPlayerImage per
+     * assegnare le immagini al player
+     *
      * @param gp   GamePanel sul quale viene caricato il player
      * @param keyH KeyHandler per utilizzare il keylistener
      * @brief costruttore parametrico del player
-     * @description metodo che inizializza la posizione dello screen e il retangolo nel quale sara presente il player
-     * richiama i metodi setDefaultValues per assegnare la posizione del player nel world e il getPlayerImage per
-     * assegnare le immagini al player
      * @since 1.0
      */
     public Player(GamePanel gp, KeyHandler keyH) {
@@ -82,11 +83,12 @@ public class Player extends Entity {
     }
 
     /**
-     * @brief metodo setDefaultValues
-     * @description metodo per inizializzare i valori di default del player
+     * metodo per inizializzare i valori di default del player
      * le cordinate X e Y
      * la velocità
      * la direzione di partenza
+     *
+     * @brief metodo setDefaultValues
      * @since 1.0
      */
     public void setDefaultValues() {
@@ -97,9 +99,10 @@ public class Player extends Entity {
     }
 
     /**
+     * metodo per assegnare le immagini per i movimenti al player passandogli il path della loro posizione
+     *
      * @throws IOException avviene se le immagini non vengono trovate e questo non fa crasciare il software
      * @brief getPlayerImage
-     * @description metodo per assegnare le immagini per i movimenti al player passandogli il path della loro posizione
      * @since 1.0
      */
 
@@ -119,9 +122,10 @@ public class Player extends Entity {
     }
 
     /**
-     * @brief medoto update()
-     * @description metodo che controlla se vengono premuti i tasti sulla tastiera se i tasti sono
+     * metodo che controlla se vengono premuti i tasti sulla tastiera se i tasti sono
      * stati premuti richiama il metodo simulateWalking() per aggiornare la posizione del player
+     *
+     * @brief medoto update()
      * @since 1.0
      */
 
@@ -143,10 +147,11 @@ public class Player extends Entity {
     }
 
     /**
+     * metodo per raccogliere gli oggetti che si trovano nella mappa contorllando
+     * index che viene passato come parametro dal CollisionChecker
+     *
      * @param index parametro per controllare i diversi tipi di oggetti che vengono trovati
      * @brief metodo pickUpOnject
-     * @description metodo per raccogliere gli oggetti che si trovano nella mappa contorllando
-     * index che viene passato come parametro dal CollisionChecker
      * @since 1.0
      */
     public void pickUpOnject(int index) {
@@ -175,10 +180,10 @@ public class Player extends Entity {
     }
 
     /**
-     * @param keyID l'ID della chiave ottenuta
+     * @param keyID      l'ID della chiave ottenuta
      * @param textToShow il testo da visualizzare a schermo
-     * @param index l'indice dell'oggetto
-     * @param color il colore del testo da visualizzare a schermo
+     * @param index      l'indice dell'oggetto
+     * @param color      il colore del testo da visualizzare a schermo
      * @brief viene segnato nell'array delle chiavi, quale chiave è stata presa e viene rimossa la visualizzazione della
      * chiave ottenuta
      * @since 1.0
@@ -190,11 +195,12 @@ public class Player extends Entity {
     }
 
     /**
-     * @param g parametro contenente il pannello grafico sul quale verrà dedisegnato il player
-     * @brief medoto draw()
-     * @description metodo per lo scambio delle immagini del player a seconda
+     * metodo per lo scambio delle immagini del player a seconda
      * della della direzione in cui deve andare e disegna l'immagine del player sul
      * gamePanel
+     *
+     * @param g parametro contenente il pannello grafico sul quale verrà dedisegnato il player
+     * @brief medoto draw()
      * @since 1.0
      */
 
@@ -231,9 +237,10 @@ public class Player extends Entity {
     }
 
     /**
-     * @brief medoto simulateWalking()
-     * @description metodo che chiama il metodo checkTile per controllare la collisione con le tile
+     * metodo che chiama il metodo checkTile per controllare la collisione con le tile
      * e somma la velocità alla cordinate X e Y per permettere il movimento del player
+     *
+     * @brief medoto simulateWalking()
      * @since 1.0
      */
     private void simulateWalking() {
