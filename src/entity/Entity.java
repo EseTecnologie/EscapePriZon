@@ -9,6 +9,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @class Entity
+ * @author Sottocasa Michele
+ * Gestione delle enti
+ */
 public class Entity extends Thread{
     public GamePanel gp;
     public int worldX, worldY;
@@ -27,6 +32,11 @@ public class Entity extends Thread{
     public Entity(){
 
     }
+
+    /**
+     * Costruttore parametrico
+     * @param gp Variabile contenente il {@link GamePanel} corrente, sul quale viene visualizzato il gioco
+     */
     public Entity(GamePanel gp) {
         this.gp = gp;
         solidArea = new Rectangle(0, 0, gp.tileSize, gp.tileSize);
@@ -34,6 +44,10 @@ public class Entity extends Thread{
             keys[i] = false;
         }
     };
+
+    /**
+     *
+     */
     public void update() {
 
 

@@ -1,10 +1,8 @@
 /**
- * @author  federico colombo
+ * @author federico colombo
  * @version 1.0
  * @file Player.java
- *
  * @brief gestione della classe player con estensione all Entity
- *
  */
 package entity;
 
@@ -16,6 +14,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 
 public class Player extends Entity {
     /** GamePanel per aggiornare le informazioni del player */
@@ -32,10 +31,11 @@ public class Player extends Entity {
 
      metodo che inizializza la posizione a X=0 e Y=0
      */
-    public Player(){
-this.screenX=0;
-this.screenY=0;
+    public Player() {
+        this.screenX = 0;
+        this.screenY = 0;
     }
+
     /**
      @brief costruttore parametrico del player
 
@@ -53,12 +53,13 @@ this.screenY=0;
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
         solidArea = new Rectangle(16, 24, 16, 16);
-        solidAreaDefaultX= solidArea.x;
-        solidAreaDefaultY=solidArea.y;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
 
         setDefaultValues();
         getPlayerImage();
     }
+
     /**
      @brief metodo setDefaultValues
 
@@ -74,6 +75,7 @@ this.screenY=0;
         speed = 4;
         direction = "down";
     }
+
     /**
      @brief getPlayerImage
 
@@ -97,6 +99,7 @@ this.screenY=0;
             e.printStackTrace();
         }
     }
+
     /**
      @brief medoto update()
 
@@ -121,6 +124,7 @@ this.screenY=0;
             simulateWalking();
         }
     }
+
     /**
      @brief metodo pickUpOnject
 
@@ -129,10 +133,10 @@ this.screenY=0;
 
      @param  index parametro per controllare i diversi tipi di oggetti che vengono trovati
      */
-    public void pickUpOnject(int index){
-        if(index!=999){
-            String objetName=gp.obj[index].name;
-            switch (objetName){
+    public void pickUpOnject(int index) {
+        if (index != 999) {
+            String objetName = gp.obj[index].name;
+            switch (objetName) {
                 case "redKey":
                     getKey(0, "Red Key!", index, Color.red);
                     break;
@@ -146,7 +150,7 @@ this.screenY=0;
                     getKey(0, "Wite Key!", index, Color.white);
                     break;
                 case "boostspeed":
-                    speed+=2;
+                    speed += 2;
                     getKey(0, "Speed Boosted!", index, Color.orange);
                     break;
 
@@ -154,11 +158,12 @@ this.screenY=0;
         }
     }
 
-    private void getKey(int keyID, String textToShow, int index, Color color){
-        keys[keyID]=true;
-        gp.obj[index]=null;
-        gp.ui.showMessage(textToShow, new Font("Arial",Font.BOLD,30), color);
+    private void getKey(int keyID, String textToShow, int index, Color color) {
+        keys[keyID] = true;
+        gp.obj[index] = null;
+        gp.ui.showMessage(textToShow, new Font("Arial", Font.BOLD, 30), color);
     }
+
     /**
      @brief medoto draw()
 
@@ -222,7 +227,7 @@ this.screenY=0;
         gp.collisionChecker.checkTile(this);
 
         //check objet collision
-        int objIndex=gp.collisionChecker.checkObject(this,true);
+        int objIndex = gp.collisionChecker.checkObject(this, true);
         pickUpOnject(objIndex);
 
         if (!collisionOn)
