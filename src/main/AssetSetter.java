@@ -54,9 +54,9 @@ public class AssetSetter {
         gp.obj[4].worldY=60*gp.tileSize;
     }
     /** Array con le coordinate x di tutti gli NPC*/
-    int[] x={12,15,50,68,79};
+    int[] x={68,45,58,49,68,58,49,68,79,79,79,33,22,28,58,35,28,9,14,8,30,40,70,20,3,15,33,86,86,84,81,63,52,36,18,5,17,25,14};
     /** Array con le coordinate Y di tutti gli NPC*/
-    int[] y={29,29,29,29,29};
+    int[] y={29,29,36,44,44,52,59,59,51,37,23,34,34,45,70,67,56,56,48,32,22,14,12,24,30,8,7,12,36,67,80,85,79,74,80,83,72,66,63};
     /**
      @brief setNpc metodo per settare le gli NPC
 
