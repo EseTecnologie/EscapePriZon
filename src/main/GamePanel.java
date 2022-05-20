@@ -107,7 +107,7 @@ public class GamePanel extends JPanel implements Runnable {
     /**
      * Creazione di un array di identità
      */
-    public Entity npc[] = new Entity[10];
+    public Entity npc[] = new Entity[40];
     public UI ui=new UI(this);
 
 
