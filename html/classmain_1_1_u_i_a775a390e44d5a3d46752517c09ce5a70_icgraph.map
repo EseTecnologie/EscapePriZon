@@ -1,0 +1,7 @@
+<map id="getXforCenterText" name="getXforCenterText">
+<area shape="rect" id="node1" title="metodo getXforCenterText" alt="" coords="545,31,669,57"/>
+<area shape="rect" id="node2" href="$classmain_1_1_u_i.html#ab6bbdc25441cd8fc0729f5586bc554dd" title="metodo drawPauseScreen" alt="" coords="371,5,497,32"/>
+<area shape="rect" id="node5" href="$classmain_1_1_u_i.html#aabac1416193defb34d32149e2023d5eb" title="metodo drawTitleScreen" alt="" coords="377,56,491,83"/>
+<area shape="rect" id="node3" href="$classmain_1_1_u_i.html#ae8c972c0fb4fcbc09c2219dd32cbd053" title="metodo draw" alt="" coords="273,31,323,57"/>
+<area shape="rect" id="node4" href="$classmain_1_1_game_panel.html#aac9233d06f3c093fc37139d7d2b258f6" title="Metodo per disegnare sul pannello della classe Graphics tutti i componenti di gioco." alt="" coords="5,31,225,57"/>
+</map>
