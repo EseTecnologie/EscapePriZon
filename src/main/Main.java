@@ -23,9 +23,9 @@ public class Main {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setTitle("escape prizon");
-
         GamePanel gamePanel = new GamePanel();
         window.add(gamePanel);
+
 
         window.pack();
 

@@ -23,10 +23,11 @@ public class Entity extends Thread{
     public boolean collisionOn = false;
     public int actionLockCounter = 0;
 
-    public boolean redKey=false;
+    /*public boolean redKey=false;
     public  boolean greenKey=false;
     public boolean whiteKey=false;
-    public boolean purpleKey=false;
+    public boolean purpleKey=false;*/
+    public boolean[] keys = new boolean[4]; // 0-> red, 1-> green, 2-> white, 3-> purple
 
     public Entity(){
 
@@ -34,6 +35,9 @@ public class Entity extends Thread{
     public Entity(GamePanel gp) {
         this.gp = gp;
         solidArea = new Rectangle(0, 0, gp.tileSize, gp.tileSize);
+        for(int i = 0; i < keys.length; i++) {
+            keys[i] = false;
+        }
     }
 
     public void update() {

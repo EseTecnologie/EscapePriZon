@@ -134,23 +134,23 @@ this.screenY=0;
             String objetName=gp.obj[index].name;
             switch (objetName){
                 case "redKey":
-                    redKey=true;
+                    keys[0]=true;
                     gp.obj[index]=null;
                     gp.ui.showMessage("Red Key!", new Font("Arial",Font.BOLD,30),Color.red);
                     break;
                 case "GreenKey":
-                    greenKey=true;
+                    keys[1]=true;
                     gp.obj[index]=null;
                     gp.ui.showMessage("Green Key!", new Font("Arial",Font.BOLD,30),Color.green);
                     break;
                 case "PurpleKey":
-                    purpleKey=true;
+                    keys[2]=true;
                     gp.obj[index]=null;
                     gp.ui.showMessage("Purple Key!", new Font("Arial",Font.BOLD,30),Color.MAGENTA);
 
                     break;
                 case "WhiteKey":
-                    whiteKey=true;
+                    keys[3]=true;
                     gp.obj[index]=null;
                     gp.ui.showMessage("White Key!", new Font("Arial",Font.BOLD,30),Color.white);
                     break;

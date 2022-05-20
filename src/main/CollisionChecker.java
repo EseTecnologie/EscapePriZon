@@ -109,8 +109,21 @@ public class CollisionChecker {
             }
         }
     }
+    //TODO document checkDor()
     public boolean checkDoor(int tileNum1,int tileNum2,Entity e) {
-        if (tileNum1 == 61 || tileNum2 == 61) {
+        int firstDorTileID = 61;
+        int howManyDoor = 4;
+        for(int i=firstDorTileID; i < howManyDoor+firstDorTileID; i++){
+            for(int j =0; j < e.keys.length; j++) {
+                if((tileNum1 == i || tileNum2 == i) && e.keys[j]){
+                    e.collisionOn = false;
+                    gp.ui.showMessage("Open Door");
+                    return true;
+                }
+            }
+        }
+
+        /* if (tileNum1 == 61 || tileNum2 == 61) {
             if (e.redKey) {
                 e.collisionOn = false;
                 gp.ui.showMessage("Open Door");
@@ -135,9 +148,27 @@ public class CollisionChecker {
                 gp.ui.showMessage("Open Door");
                 return true;
             }
-        }
+        }*/
         return false;
     }
+
+    /*private boolean checkDoorTile(int tileNum1, int tileNum2, int dorTileID, Entity e){
+        for(int i =0; i < e.keys.length; i++) {
+            if((tileNum1 == dorTileID || tileNum2 == dorTileID) && e.keys[i]){
+                e.collisionOn = false;
+                gp.ui.showMessage("Open Door");
+                return true;
+            }
+        }
+        return false;
+    }*/
+
+    /**
+     *
+     * @param entity
+     * @param player
+     * @return
+     */
     public int checkObject(Entity entity,boolean player){
         int index=999;
         for (int i=0;i<gp.obj.length;i++){
