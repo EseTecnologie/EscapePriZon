@@ -84,14 +84,18 @@ this.screenY=0;
      */
 
     public void getPlayerImage() {
-            up1 = setup("resources/player/boy_up_1");
-            up2 = setup("resources/player/boy_up_2");
-            down1 = setup("resources/player/boy_down_1");
-            down2 = setup("resources/player/boy_down_2");
-            left1 = setup("resources/player/boy_left_1");
-            left2 = setup("resources/player/boy_left_2");
-            right1 = setup("resources/player/boy_right_1");
-            right2 = setup("resources/player/boy_right_2");
+        try {
+            up1 = ImageIO.read(new File("resources/player/boy_up_1.png"));
+            up2 = ImageIO.read(new File("resources/player/boy_up_2.png"));
+            down1 = ImageIO.read(new File("resources/player/boy_down_1.png"));
+            down2 = ImageIO.read(new File("resources/player/boy_down_2.png"));
+            left1 = ImageIO.read(new File("resources/player/boy_left_1.png"));
+            left2 = ImageIO.read(new File("resources/player/boy_left_2.png"));
+            right1 = ImageIO.read(new File("resources/player/boy_right_1.png"));
+            right2 = ImageIO.read(new File("resources/player/boy_right_2.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     /**
      @brief medoto update()
