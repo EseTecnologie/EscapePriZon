@@ -1,6 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,67,57"/>
-<area shape="rect" id="node2" href="$classentity_1_1_entity.html" title="Creazione delle principali variabili e metodi per la gestione di una singola entità" alt="" coords="115,31,171,57"/>
-<area shape="rect" id="node3" href="$classentity_1_1_n_p_c___guard.html" title="Estensione della classe Entity, nella quale si implementa il funzionamento degli NPC Guardia." alt="" coords="219,5,309,32"/>
-<area shape="rect" id="node4" href="$classentity_1_1_player.html" title="Gestione dei movimenti del player." alt="" coords="235,56,293,83"/>
-</map>

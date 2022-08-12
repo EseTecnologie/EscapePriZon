@@ -1,5 +1,0 @@
-<map id="Player" name="Player">
-<area shape="rect" id="node1" title="costruttore parametrico del player" alt="" coords="5,31,64,57"/>
-<area shape="rect" id="node2" href="$classentity_1_1_player.html#a74178b0f06141404c7a088168e7336bf" title="getPlayerImage" alt="" coords="116,5,228,32"/>
-<area shape="rect" id="node3" href="$classentity_1_1_player.html#a54dc0c9e21a120afafd6c2cd9de88aab" title="metodo setDefaultValues" alt="" coords="112,56,232,83"/>
-</map>

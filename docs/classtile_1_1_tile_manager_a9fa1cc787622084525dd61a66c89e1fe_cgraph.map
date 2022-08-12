@@ -1,6 +1,0 @@
-<map id="TileManager" name="TileManager">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,97,57"/>
-<area shape="rect" id="node2" href="$classtile_1_1_tile_manager.html#a3fb4ce9d51f35997009857b734b27b74" title=" " alt="" coords="147,5,217,32"/>
-<area shape="rect" id="node3" href="$classtile_1_1_tile_manager.html#a7ae367e2e85c1e0f080f55a2b2ddddcc" title=" " alt="" coords="145,56,219,83"/>
-<area shape="rect" id="node4" href="$classmain_1_1_utility_tool.html#a3a35dd7f8f10c51fe72f5df4c517949a" title=" " alt="" coords="267,56,448,83"/>
-</map>
