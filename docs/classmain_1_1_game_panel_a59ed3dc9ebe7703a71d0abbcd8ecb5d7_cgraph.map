@@ -1,0 +1,6 @@
+<map id="setupGame" name="setupGame">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,95,83"/>
+<area shape="rect" id="node2" href="$classmain_1_1_asset_setter.html#ad33b62e203fd9e157246527d2b2e6141" title="setBoots metodo per settare le scarpe" alt="" coords="143,5,321,32"/>
+<area shape="rect" id="node3" href="$classmain_1_1_asset_setter.html#a82a8e61c5dae497224c4338ef0608bd9" title="setKey metodo per settare le chiavi" alt="" coords="148,56,316,83"/>
+<area shape="rect" id="node4" href="$classmain_1_1_asset_setter.html#a80676eb19cc9cd7bacacb02ac21c11c7" title="setNpc metodo per settare le gli NPC" alt="" coords="148,107,316,133"/>
+</map>

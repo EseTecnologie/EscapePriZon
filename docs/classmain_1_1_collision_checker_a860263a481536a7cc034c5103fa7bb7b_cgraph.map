@@ -1,0 +1,5 @@
+<map id="checkTile" name="checkTile">
+<area shape="rect" id="node1" title="metodo per il controllo delle collisioni con i tiles" alt="" coords="5,5,83,32"/>
+<area shape="rect" id="node2" href="$classmain_1_1_collision_checker.html#ac280c8b36b8971279951636825550a94" title="controlla la possibilità di aprire una porta" alt="" coords="131,5,215,32"/>
+<area shape="rect" id="node3" href="$classmain_1_1_u_i.html#a214fb6c3715047d4ae3e919e768e21a3" title="metodo per riceve le informazioni da scrivere" alt="" coords="263,5,416,32"/>
+</map>

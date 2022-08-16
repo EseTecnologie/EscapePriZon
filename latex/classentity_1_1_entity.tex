@@ -1,0 +1,336 @@
+\hypertarget{classentity_1_1_entity}{}\doxysection{Entity Class Reference}
+\label{classentity_1_1_entity}\index{Entity@{Entity}}
+
+
+Creazione delle principali variabili e metodi per la gestione di una singola entità  
+
+
+
+
+Inheritance diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classentity_1_1_entity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classentity_1_1_entity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classentity_1_1_entity_afb4718a8ca5b822cf88129ae04240489}{Entity}} ()
+\item 
+\mbox{\hyperlink{classentity_1_1_entity_a7010abb3e57ff9cf5952a911cac6a989}{Entity}} (\mbox{\hyperlink{classmain_1_1_game_panel}{Game\+Panel}} \mbox{\hyperlink{classentity_1_1_entity_a0249e46514438235793db33680038b1f}{gp}})
+\begin{DoxyCompactList}\small\item\em Costruttore parametrico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classentity_1_1_entity_ac5c54df7ed3b930268c8d7752c101725}{update}} ()
+\begin{DoxyCompactList}\small\item\em Aggiornamento delle principali logiche di gioco. \end{DoxyCompactList}\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_a8d6380259f91878731d0aacac1a630bb}{load\+Image}} (String image\+Path)
+\begin{DoxyCompactList}\small\item\em Importazione e ridimensionamento dell\textquotesingle{}immagine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classentity_1_1_entity_ae8c972c0fb4fcbc09c2219dd32cbd053}{draw}} (Graphics2D g2)
+\begin{DoxyCompactList}\small\item\em visualizzazione a schermo del mondo e delle varie entità \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_game_panel}{Game\+Panel}} \mbox{\hyperlink{classentity_1_1_entity_a0249e46514438235793db33680038b1f}{gp}}
+\item 
+int \mbox{\hyperlink{classentity_1_1_entity_a260612a5974f3bfa88a6131c270df52b}{worldX}}
+\item 
+int \mbox{\hyperlink{classentity_1_1_entity_ab043e530c329e7da22a537a5bc421ab5}{worldY}}
+\item 
+int \mbox{\hyperlink{classentity_1_1_entity_a218b4f7c6cc2681a99c23a3b089d68b1}{speed}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_a280e2ca8c2c8038abe8ceb3a7f2a6197}{up1}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_a3383af92040b0487ceea2cbbc0f776bd}{up2}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_a25ac568df10e0d9aac8583ffd750c2eb}{down1}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_af768816394522e1e429697f1bdf9a9b3}{down2}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_a897e8d5a48351f0ff14aac3fd8ad1d05}{left1}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_a5e4a4d18919f458d4b93a0db748f53f6}{left2}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_a41bb867ba4444cbf45f2fceeebc5181e}{right1}}
+\item 
+Buffered\+Image \mbox{\hyperlink{classentity_1_1_entity_affefba7f096d5bed4410d1c2494947a2}{right2}}
+\item 
+String \mbox{\hyperlink{classentity_1_1_entity_a79e1f72bd2d70b8a0bd332e6a8abf402}{direction}}
+\item 
+int \mbox{\hyperlink{classentity_1_1_entity_a6775e052c6cf2cbafd50a83d1e4b6fc3}{sprite\+Counter}} = 0
+\item 
+int \mbox{\hyperlink{classentity_1_1_entity_abf8d1cbae4f648c4728e7a2c902455e7}{sprite\+Num}} = 1
+\item 
+Rectangle \mbox{\hyperlink{classentity_1_1_entity_addd87d90f1fe2fd75fcb0604033fc7d7}{solid\+Area}}
+\item 
+int \mbox{\hyperlink{classentity_1_1_entity_a90424a7da821b5484e22f1ff440422c8}{solid\+Area\+DefaultX}}
+\item 
+int \mbox{\hyperlink{classentity_1_1_entity_a2e3b890ae9a2c2c71030ec5161ceffc6}{solid\+Area\+DefaultY}}
+\item 
+boolean \mbox{\hyperlink{classentity_1_1_entity_a8865dbeaed7dea187120d9b2964e2714}{collision\+On}} = false
+\item 
+boolean\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classentity_1_1_entity_af9bba97f333670793fdc769c530f332d}{keys}} = new boolean\mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creazione delle principali variabili e metodi per la gestione di una singola entità 
+
+\begin{DoxyAuthor}{Author}
+Sottocasa Michele 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classentity_1_1_entity_afb4718a8ca5b822cf88129ae04240489}\label{classentity_1_1_entity_afb4718a8ca5b822cf88129ae04240489}} 
+\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classentity_1_1_entity}{Entity}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a7010abb3e57ff9cf5952a911cac6a989}\label{classentity_1_1_entity_a7010abb3e57ff9cf5952a911cac6a989}} 
+\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classentity_1_1_entity}{Entity}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_game_panel}{Game\+Panel}}}]{gp }\end{DoxyParamCaption})}
+
+
+
+Costruttore parametrico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gp} & Variabile contenente il {\ttfamily \mbox{\hyperlink{}{Game\+Panel}}} corrente, sul quale viene visualizzato il gioco \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classentity_1_1_entity_ae8c972c0fb4fcbc09c2219dd32cbd053}\label{classentity_1_1_entity_ae8c972c0fb4fcbc09c2219dd32cbd053}} 
+\index{Entity@{Entity}!draw@{draw}}
+\index{draw@{draw}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void draw (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2 }\end{DoxyParamCaption})}
+
+
+
+visualizzazione a schermo del mondo e delle varie entità 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g2} & {\ttfamily \mbox{\hyperlink{}{pannello}}} su cui viene visualizzato il gioco \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented in \mbox{\hyperlink{classentity_1_1_player_aa1d7313ddd3adaef052411dcfbdfd71b}{Player}}.
+
+\mbox{\Hypertarget{classentity_1_1_entity_a8d6380259f91878731d0aacac1a630bb}\label{classentity_1_1_entity_a8d6380259f91878731d0aacac1a630bb}} 
+\index{Entity@{Entity}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}}
+{\footnotesize\ttfamily Buffered\+Image load\+Image (\begin{DoxyParamCaption}\item[{String}]{image\+Path }\end{DoxyParamCaption})}
+
+
+
+Importazione e ridimensionamento dell\textquotesingle{}immagine. 
+
+Creazione di un file, contenente l\textquotesingle{}immagine importata. Si procede poi tramite la classe {\ttfamily \mbox{\hyperlink{}{Utility\+Tool}}} a ridimensionare l\textquotesingle{}immagine, per ingrandirla, in modo da renderla visibile più SEMPLICEMENTE 
+\begin{DoxyParams}{Parameters}
+{\em image\+Path} & path dell\textquotesingle{}immagine da ridimensionare, esclusa l\textquotesingle{}estensione \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}{\ttfamily \mbox{\hyperlink{}{immagine}}} ridimensionata 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classentity_1_1_entity_a8d6380259f91878731d0aacac1a630bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classentity_1_1_entity_a8d6380259f91878731d0aacac1a630bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classentity_1_1_entity_ac5c54df7ed3b930268c8d7752c101725}\label{classentity_1_1_entity_ac5c54df7ed3b930268c8d7752c101725}} 
+\index{Entity@{Entity}!update@{update}}
+\index{update@{update}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Aggiornamento delle principali logiche di gioco. 
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented in \mbox{\hyperlink{classentity_1_1_player_ac5c54df7ed3b930268c8d7752c101725}{Player}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classentity_1_1_entity_ac5c54df7ed3b930268c8d7752c101725_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classentity_1_1_entity_a8865dbeaed7dea187120d9b2964e2714}\label{classentity_1_1_entity_a8865dbeaed7dea187120d9b2964e2714}} 
+\index{Entity@{Entity}!collisionOn@{collisionOn}}
+\index{collisionOn@{collisionOn}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{collisionOn}{collisionOn}}
+{\footnotesize\ttfamily boolean collision\+On = false}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a79e1f72bd2d70b8a0bd332e6a8abf402}\label{classentity_1_1_entity_a79e1f72bd2d70b8a0bd332e6a8abf402}} 
+\index{Entity@{Entity}!direction@{direction}}
+\index{direction@{direction}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily String direction}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a25ac568df10e0d9aac8583ffd750c2eb}\label{classentity_1_1_entity_a25ac568df10e0d9aac8583ffd750c2eb}} 
+\index{Entity@{Entity}!down1@{down1}}
+\index{down1@{down1}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{down1}{down1}}
+{\footnotesize\ttfamily Buffered\+Image down1}
+
+\mbox{\Hypertarget{classentity_1_1_entity_af768816394522e1e429697f1bdf9a9b3}\label{classentity_1_1_entity_af768816394522e1e429697f1bdf9a9b3}} 
+\index{Entity@{Entity}!down2@{down2}}
+\index{down2@{down2}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{down2}{down2}}
+{\footnotesize\ttfamily Buffered\+Image down2}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a0249e46514438235793db33680038b1f}\label{classentity_1_1_entity_a0249e46514438235793db33680038b1f}} 
+\index{Entity@{Entity}!gp@{gp}}
+\index{gp@{gp}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{gp}{gp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmain_1_1_game_panel}{Game\+Panel}} gp}
+
+\mbox{\Hypertarget{classentity_1_1_entity_af9bba97f333670793fdc769c530f332d}\label{classentity_1_1_entity_af9bba97f333670793fdc769c530f332d}} 
+\index{Entity@{Entity}!keys@{keys}}
+\index{keys@{keys}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{keys}{keys}}
+{\footnotesize\ttfamily boolean \mbox{[}$\,$\mbox{]} keys = new boolean\mbox{[}4\mbox{]}}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a897e8d5a48351f0ff14aac3fd8ad1d05}\label{classentity_1_1_entity_a897e8d5a48351f0ff14aac3fd8ad1d05}} 
+\index{Entity@{Entity}!left1@{left1}}
+\index{left1@{left1}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{left1}{left1}}
+{\footnotesize\ttfamily Buffered\+Image left1}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a5e4a4d18919f458d4b93a0db748f53f6}\label{classentity_1_1_entity_a5e4a4d18919f458d4b93a0db748f53f6}} 
+\index{Entity@{Entity}!left2@{left2}}
+\index{left2@{left2}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{left2}{left2}}
+{\footnotesize\ttfamily Buffered\+Image left2}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a41bb867ba4444cbf45f2fceeebc5181e}\label{classentity_1_1_entity_a41bb867ba4444cbf45f2fceeebc5181e}} 
+\index{Entity@{Entity}!right1@{right1}}
+\index{right1@{right1}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{right1}{right1}}
+{\footnotesize\ttfamily Buffered\+Image right1}
+
+\mbox{\Hypertarget{classentity_1_1_entity_affefba7f096d5bed4410d1c2494947a2}\label{classentity_1_1_entity_affefba7f096d5bed4410d1c2494947a2}} 
+\index{Entity@{Entity}!right2@{right2}}
+\index{right2@{right2}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{right2}{right2}}
+{\footnotesize\ttfamily Buffered\+Image right2}
+
+\mbox{\Hypertarget{classentity_1_1_entity_addd87d90f1fe2fd75fcb0604033fc7d7}\label{classentity_1_1_entity_addd87d90f1fe2fd75fcb0604033fc7d7}} 
+\index{Entity@{Entity}!solidArea@{solidArea}}
+\index{solidArea@{solidArea}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{solidArea}{solidArea}}
+{\footnotesize\ttfamily Rectangle solid\+Area}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a90424a7da821b5484e22f1ff440422c8}\label{classentity_1_1_entity_a90424a7da821b5484e22f1ff440422c8}} 
+\index{Entity@{Entity}!solidAreaDefaultX@{solidAreaDefaultX}}
+\index{solidAreaDefaultX@{solidAreaDefaultX}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{solidAreaDefaultX}{solidAreaDefaultX}}
+{\footnotesize\ttfamily int solid\+Area\+DefaultX}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a2e3b890ae9a2c2c71030ec5161ceffc6}\label{classentity_1_1_entity_a2e3b890ae9a2c2c71030ec5161ceffc6}} 
+\index{Entity@{Entity}!solidAreaDefaultY@{solidAreaDefaultY}}
+\index{solidAreaDefaultY@{solidAreaDefaultY}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{solidAreaDefaultY}{solidAreaDefaultY}}
+{\footnotesize\ttfamily int solid\+Area\+DefaultY}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a218b4f7c6cc2681a99c23a3b089d68b1}\label{classentity_1_1_entity_a218b4f7c6cc2681a99c23a3b089d68b1}} 
+\index{Entity@{Entity}!speed@{speed}}
+\index{speed@{speed}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily int speed}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a6775e052c6cf2cbafd50a83d1e4b6fc3}\label{classentity_1_1_entity_a6775e052c6cf2cbafd50a83d1e4b6fc3}} 
+\index{Entity@{Entity}!spriteCounter@{spriteCounter}}
+\index{spriteCounter@{spriteCounter}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{spriteCounter}{spriteCounter}}
+{\footnotesize\ttfamily int sprite\+Counter = 0}
+
+\mbox{\Hypertarget{classentity_1_1_entity_abf8d1cbae4f648c4728e7a2c902455e7}\label{classentity_1_1_entity_abf8d1cbae4f648c4728e7a2c902455e7}} 
+\index{Entity@{Entity}!spriteNum@{spriteNum}}
+\index{spriteNum@{spriteNum}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{spriteNum}{spriteNum}}
+{\footnotesize\ttfamily int sprite\+Num = 1}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a280e2ca8c2c8038abe8ceb3a7f2a6197}\label{classentity_1_1_entity_a280e2ca8c2c8038abe8ceb3a7f2a6197}} 
+\index{Entity@{Entity}!up1@{up1}}
+\index{up1@{up1}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{up1}{up1}}
+{\footnotesize\ttfamily Buffered\+Image up1}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a3383af92040b0487ceea2cbbc0f776bd}\label{classentity_1_1_entity_a3383af92040b0487ceea2cbbc0f776bd}} 
+\index{Entity@{Entity}!up2@{up2}}
+\index{up2@{up2}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{up2}{up2}}
+{\footnotesize\ttfamily Buffered\+Image up2}
+
+\mbox{\Hypertarget{classentity_1_1_entity_a260612a5974f3bfa88a6131c270df52b}\label{classentity_1_1_entity_a260612a5974f3bfa88a6131c270df52b}} 
+\index{Entity@{Entity}!worldX@{worldX}}
+\index{worldX@{worldX}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{worldX}{worldX}}
+{\footnotesize\ttfamily int worldX}
+
+\mbox{\Hypertarget{classentity_1_1_entity_ab043e530c329e7da22a537a5bc421ab5}\label{classentity_1_1_entity_ab043e530c329e7da22a537a5bc421ab5}} 
+\index{Entity@{Entity}!worldY@{worldY}}
+\index{worldY@{worldY}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{worldY}{worldY}}
+{\footnotesize\ttfamily int worldY}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/websites/\+Escape\+Pri\+Zon/src/entity/\mbox{\hyperlink{_entity_8java}{Entity.\+java}}\end{DoxyCompactItemize}

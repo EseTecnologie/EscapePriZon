@@ -1,0 +1,12 @@
+<map id="update" name="update">
+<area shape="rect" id="node1" title="Aggiornamento delle principali logiche di gioco." alt="" coords="5,187,67,214"/>
+<area shape="rect" id="node2" href="$classmain_1_1_collision_checker.html#a911657e9d60625541f54d46bd221cb1a" title="metodo per il controllo delle collisioni con gli oggetti" alt="" coords="125,5,315,47"/>
+<area shape="rect" id="node3" href="$classmain_1_1_collision_checker.html#a7f24195437764f42b4cf55c1a3054d13" title="metodo per il controllo delle collisioni con il player" alt="" coords="125,71,315,112"/>
+<area shape="rect" id="node4" href="$classmain_1_1_collision_checker.html#a860263a481536a7cc034c5103fa7bb7b" title="metodo per il controllo delle collisioni con i tiles" alt="" coords="115,137,325,163"/>
+<area shape="rect" id="node7" href="$classmain_1_1_asset_setter.html#ad33b62e203fd9e157246527d2b2e6141" title="setBoots metodo per settare le scarpe" alt="" coords="131,187,309,214"/>
+<area shape="rect" id="node8" href="$classentity_1_1_player.html#a54dc0c9e21a120afafd6c2cd9de88aab" title="metodo setDefaultValues" alt="" coords="141,239,299,280"/>
+<area shape="rect" id="node9" href="$classmain_1_1_asset_setter.html#a80676eb19cc9cd7bacacb02ac21c11c7" title="setNpc metodo per settare le gli NPC" alt="" coords="136,305,304,331"/>
+<area shape="rect" id="node10" href="$classmain_1_1_asset_setter.html#a7349e8804f845ca89b9a1b1ace3e219a" title="spotNpc()" alt="" coords="133,355,307,382"/>
+<area shape="rect" id="node5" href="$classmain_1_1_collision_checker.html#ac280c8b36b8971279951636825550a94" title="controlla la possibilità di aprire una porta" alt="" coords="373,137,591,163"/>
+<area shape="rect" id="node6" href="$classmain_1_1_u_i.html#a214fb6c3715047d4ae3e919e768e21a3" title="metodo per riceve le informazioni da scrivere" alt="" coords="639,137,792,163"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="Entity" name="Entity">
+<area shape="rect" id="node1" title="Creazione delle principali variabili e metodi per la gestione di una singola entità" alt="" coords="5,1122,143,1405"/>
+<area shape="rect" id="node2" title=" " alt="" coords="6,5,67,83"/>
+<area shape="rect" id="node12" href="$classentity_1_1_entity.html" title="Creazione delle principali variabili e metodi per la gestione di una singola entità" alt="" coords="668,248,805,531"/>
+<area shape="rect" id="node3" href="$classmain_1_1_game_panel.html" title="Estensione della classe JPanel." alt="" coords="628,696,771,1052"/>
+<area shape="rect" id="node6" href="$classtile_1_1_tile_manager.html" title="Caricamento e gestione di Tiles e Mappa." alt="" coords="949,1203,1061,1324"/>
+<area shape="rect" id="node9" href="$classmain_1_1_key_handler.html" title="classe per la gestione del KeyListener" alt="" coords="167,1181,285,1346"/>
+<area shape="rect" id="node11" href="$classentity_1_1_player.html" title="Gestione dei movimenti del player." alt="" coords="545,1475,685,1669"/>
+<area shape="rect" id="node13" href="$classmain_1_1_collision_checker.html" title="gestione delle collisioni di Player e entity.NPC_Guard con gli oggetti" alt="" coords="405,1195,543,1331"/>
+<area shape="rect" id="node14" href="$classmain_1_1_asset_setter.html" title=" " alt="" coords="568,1188,679,1339"/>
+<area shape="rect" id="node16" href="$classmain_1_1_u_i.html" title="Gestione e visualizzazione a schermo di messaggi di testo." alt="" coords="703,1115,850,1412"/>
+<area shape="rect" id="node4" title=" " alt="" coords="991,351,1053,428"/>
+<area shape="rect" id="node5" title=" " alt="" coords="568,351,644,428"/>
+<area shape="rect" id="node7" href="$classtile_1_1_tile.html" title="dichiarazione degli attributi di ogni singolo tile utilizzai poi in TileManager" alt="" coords="1131,575,1212,652"/>
+<area shape="rect" id="node8" title=" " alt="" coords="846,5,950,83"/>
+<area shape="rect" id="node15" href="$classobject_1_1_super_object.html" title="Gestione generale degli oggetti generici." alt="" coords="829,307,967,472"/>
+<area shape="rect" id="node10" title=" " alt="" coords="123,835,214,913"/>
+</map>

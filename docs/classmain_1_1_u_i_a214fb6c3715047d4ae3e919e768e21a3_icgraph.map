@@ -1,0 +1,12 @@
+<map id="showMessage" name="showMessage">
+<area shape="rect" id="node1" title="metodo per riceve le informazioni da scrivere" alt="" coords="1364,56,1469,83"/>
+<area shape="rect" id="node2" href="$classmain_1_1_collision_checker.html#ac280c8b36b8971279951636825550a94" title="controlla la possibilità di aprire una porta" alt="" coords="1099,5,1316,32"/>
+<area shape="rect" id="node9" href="$classentity_1_1_player.html#a89dd25dce8cc2cf14a9aa283a91aa336" title="viene segnato nell&#39;array delle chiavi, quale chiave è stata presa e viene rimossa la visualizzazione ..." alt="" coords="1137,56,1277,83"/>
+<area shape="rect" id="node10" href="$classentity_1_1_player.html#a6a73bbab89f7158d3eb138d934af914b" title="metodo pickUpOnject" alt="" coords="857,56,1034,83"/>
+<area shape="rect" id="node3" href="$classmain_1_1_collision_checker.html#a860263a481536a7cc034c5103fa7bb7b" title="metodo per il controllo delle collisioni con i tiles" alt="" coords="840,5,1051,32"/>
+<area shape="rect" id="node4" href="$classentity_1_1_player.html#a37f26750011a4243d2b94689e57b1f2e" title="medoto simulateWalking()" alt="" coords="597,56,792,83"/>
+<area shape="rect" id="node8" href="$classentity_1_1_entity.html#ac5c54df7ed3b930268c8d7752c101725" title="Aggiornamento delle principali logiche di gioco." alt="" coords="627,5,762,32"/>
+<area shape="rect" id="node5" href="$classentity_1_1_player.html#ac5c54df7ed3b930268c8d7752c101725" title="medoto update()" alt="" coords="411,56,549,83"/>
+<area shape="rect" id="node6" href="$classmain_1_1_game_panel.html#ac5c54df7ed3b930268c8d7752c101725" title="Aggiornamento della posizione del player nella schermata, solo nel caso in cui il gioco non è in paus..." alt="" coords="197,56,363,83"/>
+<area shape="rect" id="node7" href="$classmain_1_1_game_panel.html#a13a43e6d814de94978c515cb084873b1" title=" " alt="" coords="5,56,149,83"/>
+</map>
