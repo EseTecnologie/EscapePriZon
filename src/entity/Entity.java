@@ -50,6 +50,32 @@ public class Entity extends Thread {
      * @brief Aggiornamento delle principali logiche di gioco
      * @since 1.0
      */
+    public void updateclient(){
+        collisionOn=false;
+        if (gp.collisionChecker.checkPlayer(this)) {
+            gp.aSetter.stopNpc();
+            gp.aSetter.setNpc();
+            gp.player.setDefaultValues();
+            gp.aSetter.setBoots();
+        }
+        if(!collisionOn){
+            switch (direction) {
+                case "up" -> worldY -= speed;
+                case "down" -> worldY += speed;
+                case "left" -> worldX -= speed;
+                case "right" -> worldX += speed;
+            }
+        }
+
+        spriteCounter++;
+        if (spriteCounter > 10) {
+            if (spriteNum == 1)
+                spriteNum = 2;
+            else if (spriteNum == 2)
+                spriteNum = 1;
+            spriteCounter = 0;
+        }
+    }
     public void update() {
 
 

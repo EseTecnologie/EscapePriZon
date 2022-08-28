@@ -21,10 +21,8 @@ public class NPC_Guard extends Entity {
 
         direction = "left";
         speed = 3;
-
         getGuardImage();
     }
-
     /**
      * @brief Caricamento delle immagini dell'NPC dai files
      * @since 1.0
@@ -49,7 +47,7 @@ public class NPC_Guard extends Entity {
     @Override
     public void run() {
         while (true) {
-            changeDirection();
+           // changeDirection();
             try {
                 sleep(1000);
             } catch (InterruptedException e) {

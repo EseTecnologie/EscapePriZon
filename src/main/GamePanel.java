@@ -1,7 +1,11 @@
 package main;
 
+import Udp.FileCLIENT;
+import Udp.ThreadCondivisione;
 import entity.Entity;
+import entity.EntityGestions;
 import entity.Player;
+import entity.Player2;
 import object.SuperObject;
 import tile.TileManager;
 
@@ -96,6 +100,7 @@ public class GamePanel extends JPanel implements Runnable {
      * @since 1.0
      */
     public Player player = new Player(this, keyH);
+    public Player2 player2;
     /**
      * Thread per la gestione della finestra di gioco
      *
@@ -116,15 +121,18 @@ public class GamePanel extends JPanel implements Runnable {
      * @brief Creazione di un array di NPC
      * @since 1.0
      */
-    public Entity[] npc = new Entity[40];
+    public Entity[] npc = new Entity[39];
     public UI ui = new UI(this);
 
-
+    EntityGestions eg=new EntityGestions(this);
     //game state
     public int gameState;
     public int titleState = 0;
     public final int playState = 1;
     public final int pauseState = 2;
+
+    FileCLIENT fc=new FileCLIENT(this);
+    ThreadCondivisione fs=new ThreadCondivisione();
 
     public void setupGame() {
         aSetter.setKey();
@@ -133,12 +141,16 @@ public class GamePanel extends JPanel implements Runnable {
         gameState = titleState;
     }
 
+
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
+        fc.start();
+        fs.start();
+       // server.start();
     }
 
     /**
@@ -197,10 +209,12 @@ public class GamePanel extends JPanel implements Runnable {
         if (gameState == playState) {
             //player
             player.update();
+            //player 2
+            player2.updateclient();
             //npc
             for (Entity entity : npc) {
                 if (entity != null) {
-                    entity.update();
+                    entity.updateclient();
                 }
             }
         }
@@ -228,14 +242,18 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
             //npc
-
             for (Entity entity : npc) {
                 if (entity != null) {
                     entity.draw(g2);
                 }
             }
+            //player2
+            if(player2!=null)
+            player2.draw(g2);
             //player
             player.draw(g2);
+            fc.update();
+
             //UI
             ui.draw(g2);
             g2.dispose();
