@@ -19,7 +19,7 @@ public class FileCLIENT extends Thread {
 
    public FileCLIENT(GamePanel gp){
        this.gp=gp;
-        port = 12345; // Change this to the desired port
+        port = 10101; // Change this to the desired port
         serverRoute = "C:\\EscapePrizon\\";
     }
     public static DatagramSocket socket;

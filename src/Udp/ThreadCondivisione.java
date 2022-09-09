@@ -11,8 +11,8 @@ import javax.swing.JFileChooser;
 
 public class ThreadCondivisione extends Thread{
 public ThreadCondivisione(){
-    port = 12345;
-    host = "127.0.0.1";
+    port = 10102;
+    host = "192.168.178.13";
 }
 File f;
 

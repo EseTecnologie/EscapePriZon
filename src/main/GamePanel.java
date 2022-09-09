@@ -218,6 +218,7 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
         }
+        eg.updatePlayer();
     }
 
     /**
@@ -225,8 +226,7 @@ public class GamePanel extends JPanel implements Runnable {
      * @brief Metodo per disegnare sul pannello della classe {@link Graphics} tutti i componenti di gioco
      * @since 1.0
      */
-    public void paintComponent(Graphics g) {
-        eg.updatePlayer();
+    public void paintComponent(Graphics g)  {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         //tile screen
