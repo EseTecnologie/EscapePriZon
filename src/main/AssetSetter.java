@@ -6,6 +6,7 @@
  */
 package main;
 
+import entity.Entity;
 import entity.EntityGestions;
 import entity.NPC_Guard;
 import entity.Player2;
@@ -132,6 +133,7 @@ public class AssetSetter {
      * @since 1.0
      */
     public void stopNpc() {
+        gp.eg.updateContact();
         for (int i = 0; i < gp.npc.length; i++) {
             if (gp.npc[i] != null) {
                 gp.npc[i].interrupt();

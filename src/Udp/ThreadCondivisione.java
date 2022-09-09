@@ -1,8 +1,6 @@
 package Udp;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -16,19 +14,15 @@ public ThreadCondivisione(){
     port = 12345;
     host = "127.0.0.1";
 }
-    /*
-        Method for getting the file to be send and send its name
-     */
+File f;
+
     private void ready(int port, String host) {
         try {
             DatagramSocket socket = new DatagramSocket();
             InetAddress address = InetAddress.getByName(host);
+
             String fileName;
 
-
-
-
-                File f = new File("C:\\EscapePrizon\\FromClient.csv");
                 fileName = f.getName();
                 byte[] fileNameBytes = fileName.getBytes(); // File name as bytes to send it
                 DatagramPacket fileStatPacket = new DatagramPacket(fileNameBytes, fileNameBytes.length, address, port); // File name packet
@@ -123,11 +117,9 @@ public ThreadCondivisione(){
 
     @Override
     public void run() {
-
+        f = new File("C:\\EscapePrizon\\FromClient.csv");
        while(true) {
            ready(port, host);
-
-
        }
     }
 }

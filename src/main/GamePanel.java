@@ -226,8 +226,8 @@ public class GamePanel extends JPanel implements Runnable {
      * @since 1.0
      */
     public void paintComponent(Graphics g) {
+        eg.updatePlayer();
         super.paintComponent(g);
-
         Graphics2D g2 = (Graphics2D) g;
         //tile screen
         if (gameState == titleState) {
@@ -252,7 +252,6 @@ public class GamePanel extends JPanel implements Runnable {
             player2.draw(g2);
             //player
             player.draw(g2);
-            fc.update();
 
             //UI
             ui.draw(g2);

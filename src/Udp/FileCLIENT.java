@@ -45,7 +45,7 @@ public class FileCLIENT extends Thread {
             socket.receive(receiveFileNamePacket); // Receive the datagram with the name of the file
 
 
-            File f = new File (serverRoute + "\\" +"FormClient.csv" ); // Creating the file
+            File f = new File (serverRoute + "\\" +"FromServer.csv" ); // Creating the file
             FileOutputStream outToFile = new FileOutputStream(f); // Creating the stream through which we write the file content
 
             receiveFile(outToFile, socket); // Receiving the file
@@ -119,21 +119,5 @@ public class FileCLIENT extends Thread {
         System.out.println("Sent ack: Sequence Number = " + foundLast);
     }
 
-    public void update(){
-        int x=gp.player.worldX/48;
-        int y=gp.player.worldY/48;
 
-        try{
-            String c=x+";"+y;
-            File file=new File("C:\\EscapePrizon\\FromClient.csv");
-            file.createNewFile();
-            FileWriter fw = new FileWriter(file);
-            fw.write(c);
-            fw.flush();
-            fw.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

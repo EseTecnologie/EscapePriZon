@@ -37,7 +37,18 @@ public class EntityGestions extends Thread{
                 e.printStackTrace();
             }
 
+
             for (int i=0;i<g.size();i++){
+                if(i==g.size()-1){
+                    String[] xy;
+                    xy=g.get(i).split(";");
+                    if(xy[0]=="1"){
+                        gp.aSetter.stopNpc();
+                        gp.aSetter.setNpc();
+                        this.interrupt();
+                    }
+                }
+
                 String[] xy;
                 xy=g.get(i).split(";");
 
@@ -75,5 +86,44 @@ public class EntityGestions extends Thread{
             }
 
         }
+    }
+
+    public void updatePlayer(){
+
+            int x=gp.player.worldX/48;
+            int y=gp.player.worldY/48;
+        System.out.println(x+";"+y);
+        try{
+                String c=x+";"+y+"\n0";
+                File file=new File("C:\\EscapePrizon\\FromClient.csv");
+                file.createNewFile();
+                FileWriter fw = new FileWriter(file);
+                fw.write(c);
+                fw.flush();
+                fw.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+    }
+
+    public void updateContact(){
+        int x=gp.player.worldX/48;
+        int y=gp.player.worldY/48;
+        System.out.println(x+";"+y+"\n1");
+        try{
+            String c=x+";"+y+"\n1";
+            File file=new File("C:\\EscapePrizon\\FromClient.csv");
+            file.createNewFile();
+            FileWriter fw = new FileWriter(file);
+            fw.write(c);
+            fw.flush();
+            fw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
