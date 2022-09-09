@@ -21,10 +21,8 @@ public class NPC_Guard extends Entity {
 
         direction = "left";
         speed = 3;
-
         getGuardImage();
     }
-
     /**
      * @brief Caricamento delle immagini dell'NPC dai files
      * @since 1.0

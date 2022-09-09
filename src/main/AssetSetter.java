@@ -6,9 +6,13 @@
  */
 package main;
 
+import entity.EntityGestions;
 import entity.NPC_Guard;
+import entity.Player2;
 import object.OBJ_Key;
 import object.OBJ_boostSpeed;
+
+import java.io.IOException;
 
 /**
  * @author Federico Colombo
@@ -83,12 +87,30 @@ public class AssetSetter {
      * @since 1.0
      */
     public void setNpc() {
+        try{
+            String c="";
+            for (int i=0;i<y.length;i++){
+                c+=(x[i]+";"+y[i]+";\n");
+            }
+            gp.fw.write(c);
+            gp.fw.flush();
+            gp.fw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         for (int i = 0; i < x.length; i++) {
             gp.npc[i] = new NPC_Guard(gp);
             gp.npc[i].worldX = gp.tileSize * x[i];
             gp.npc[i].worldY = gp.tileSize * y[i];
-            gp.npc[i].start();
+            //gp.npc[i].start();
         }
+        gp.player2=new Player2(gp);
+        gp.player2.worldX=gp.tileSize*68;
+        gp.player2.worldY=gp.tileSize*32;
+        gp.eg=new EntityGestions(gp);
+        gp.eg.start();
     }
 
     /**
@@ -104,6 +126,10 @@ public class AssetSetter {
                 gp.npc[i] = null;
             }
         }
+        gp.player2=null;
+
+        gp.eg.interrupt();
+        gp.eg=null;
 
     }
 }
