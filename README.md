@@ -1,15 +1,14 @@
 # EscapePriZon
 
-The player will play the role of a prisoner trying to escape from the prison by overcoming various obstacles such as surveillance cameras and guards. The prisoner will have to land the guards (with objects that he can find in the cells or from the landed guards), in order to get the tiles to be able to escape.
+The player will play the role of a prisoner trying to escape from the prison by overcoming guards. The prisoner will have to search the keys around the prison to escape. There is an hidden object in the map that permit to boos the player speed. Have fun!!
 
-## Jobs
+## UML
 
-Colombo: Controlli player(movimenti, collisioni con oggetti/muri), gestione apertura porte e chiavi, start pase, finish page, pause page
+![UML](uml.png)
 
-Sottocasa: Creazione mappe, gestione npc Guardie, controllo generale documentazione
-
-## Resources
-
----
-[Tasks](https://trello.com/b/BPf3Rdgd/escape-prizon)
-(trello) 
+## Screenshot
+![Menu](Menu.png)
+![Spown](Spown.png)
+![Key founded](got-one-key.png)
+![Door opened](Opened-door.png)
+![Finish](Finish.png)
